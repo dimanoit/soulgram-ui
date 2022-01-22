@@ -1,0 +1,18 @@
+@import "common-styles/variables";
+@import "material-icons/iconfont/material-icons.css";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border: none;
+  font-family: "Manrope";
+}
+
+body {
+  font-style: normal;
+  font-weight: normal;
+  color: $neutral-black;
+  font-size: 14px;
+  line-height: 135%;
+}

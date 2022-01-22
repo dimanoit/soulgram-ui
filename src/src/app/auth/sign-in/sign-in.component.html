@@ -1,0 +1,76 @@
+<div class="container">
+  <div class="info-container">
+    <div class="logo-container">
+      <img class="icon-image" src="/assets/icons/logo.svg" />
+      <div class="text">Soulgram</div>
+    </div>
+
+    <div class="idea-message grey-3-text">
+      A social network for finding friends and people with similar interests and
+      thoughts.
+    </div>
+
+    <H1 class="welcome-message">
+      We can help to find your
+      <span class="marked-word">soulmate</span>
+      today.
+    </H1>
+
+    <div class="people-image"></div>
+  </div>
+
+  <div class="right-wrapper">
+    <div class="change-language">
+      <div>English</div>
+      <div class="material-icons-outlined icon">expand_more</div>
+    </div>
+
+    <div class="form-container">
+      <H2>Sign in to Soulgram</H2>
+
+      <div class="grey-3-text">
+        Don't have an account yet?
+        <span class="link"> Sign up</span>
+      </div>
+
+      <soul-input
+        class="input"
+        label="Login"
+        placeholder="example@gmail.com"
+      ></soul-input>
+
+      <soul-input
+        class="input"
+        label="Password"
+        secondLabel="Forgot your password?"
+        [isPassword]="true"
+      ></soul-input>
+
+      <soul-button text="Sing in" class="input"></soul-button>
+
+      <div class="or-section">
+        <div class="line"></div>
+        <div class="btn-text or">or</div>
+        <div class="line"></div>
+      </div>
+
+      <div class="external-login">
+        <soul-button
+          [textColor]="colors.NeutralGrey3"
+          [background]="colors.NeutralGrey0"
+          text="Google"
+          iconUrl="/assets/icons/google-color.svg"
+          class="ex-button"
+        ></soul-button>
+
+        <soul-button
+          [textColor]="colors.NeutralGrey3"
+          [background]="colors.NeutralGrey0"
+          text="Facebook"
+          iconUrl="/assets/icons/facebook.svg"
+          class="ex-button"
+        ></soul-button>
+      </div>
+    </div>
+  </div>
+</div>

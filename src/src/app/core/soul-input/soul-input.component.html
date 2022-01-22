@@ -1,0 +1,17 @@
+<div class="input-wrapper">
+  <div class="labels">
+    <div class="grey-3-text">{{ label }}</div>
+    <div class="link" *ngIf="secondLabel">{{ secondLabel }}</div>
+  </div>
+
+  <div class="input-with-icon">
+    <span *ngIf="isPassword" class="material-icons-outlined icon">
+      visibility_off
+    </span>
+    <input
+      class="soul-input"
+      [type]="isPassword ? 'password' : 'text'"
+      [placeholder]="isPassword ? '********' : placeholder"
+    />
+  </div>
+</div>

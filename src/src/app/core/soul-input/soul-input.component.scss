@@ -1,0 +1,43 @@
+@import "src/common-styles/variables";
+
+.input-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.labels {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.input-with-icon {
+  position: relative;
+
+  .icon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: $neutral-grey-2;
+  }
+}
+
+.soul-input {
+  background-color: $neutral-grey-0;
+  border-radius: 12px;
+  width: 100%;
+
+  height: 45px;
+
+  padding-left: 16px;
+}
+
+textarea:focus,
+input:focus {
+  outline: none;
+  color: $neutral-black;
+}
+
+input::placeholder {
+  color: $neutral-grey-2;
+}
