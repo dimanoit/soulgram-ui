@@ -12,6 +12,7 @@
       class="soul-input"
       [type]="isPassword ? 'password' : 'text'"
       [placeholder]="isPassword ? '********' : placeholder"
+      (change)="onTextChange($event.target)"
     />
   </div>
 </div>

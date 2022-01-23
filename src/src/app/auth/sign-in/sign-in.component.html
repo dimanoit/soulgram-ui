@@ -25,7 +25,7 @@
       <div class="material-icons-outlined icon">expand_more</div>
     </div>
 
-    <div class="form-container">
+    <form [formGroup]="loginForm" class="form-container">
       <H2>Sign in to Soulgram</H2>
 
       <div class="grey-3-text">
@@ -34,19 +34,26 @@
       </div>
 
       <soul-input
+        formControlName="login"
         class="input"
         label="Login"
         placeholder="example@gmail.com"
-      ></soul-input>
+      >
+      </soul-input>
 
       <soul-input
+        formControlName="password"
         class="input"
         label="Password"
         secondLabel="Forgot your password?"
         [isPassword]="true"
       ></soul-input>
 
-      <soul-button text="Sing in" class="input"></soul-button>
+      <soul-button
+        (click)="onSubmit()"
+        text="Sing in"
+        class="input"
+      ></soul-button>
 
       <div class="or-section">
         <div class="line"></div>
@@ -71,6 +78,6 @@
           class="ex-button"
         ></soul-button>
       </div>
-    </div>
+    </form>
   </div>
 </div>
