@@ -30,7 +30,9 @@
 
       <div class="grey-3-text">
         Don't have an account yet?
-        <span class="link"> Sign up</span>
+        <a [routerLink]="links.Register" routerLinkActive="active" class="link">
+          Sign up</a
+        >
       </div>
 
       <soul-input
@@ -46,6 +48,7 @@
         class="input"
         label="Password"
         secondLabel="Forgot your password?"
+        [link]="links.ForgotPassword"
         [isPassword]="true"
       ></soul-input>
 

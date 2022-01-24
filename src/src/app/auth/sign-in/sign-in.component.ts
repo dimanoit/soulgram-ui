@@ -6,6 +6,7 @@ import {
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { SoulColors } from 'src/app/core/soul-colors';
+import { RoutesNames } from 'src/app/main.routes';
 import { UserLoginInfo } from '../models/user-login-info';
 import { AuthService } from '../services/auth.service';
 
@@ -18,6 +19,7 @@ import { AuthService } from '../services/auth.service';
 })
 export class SignInComponent {
   colors = SoulColors;
+  links = RoutesNames;
 
   loginForm: FormGroup;
   constructor(

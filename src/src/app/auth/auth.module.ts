@@ -9,6 +9,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { OAuthModule } from 'angular-oauth2-oidc';
 import { HttpClientModule } from '@angular/common/http';
 import { AuthService } from './services/auth.service';
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 
 const routes: Routes = [
   {
@@ -19,10 +20,14 @@ const routes: Routes = [
     path: RoutesNames.Register,
     component: SignUpComponent,
   },
+  {
+    path: RoutesNames.ForgotPassword,
+    component: ForgotPasswordComponent,
+  },
 ];
 
 @NgModule({
-  declarations: [SignUpComponent, SignInComponent],
+  declarations: [SignUpComponent, SignInComponent, ForgotPasswordComponent],
   providers: [AuthService],
   imports: [
     CommonModule,

@@ -1,12 +1,14 @@
 <div class="input-wrapper">
   <div class="labels">
     <div class="grey-3-text">{{ label }}</div>
-    <div class="link" *ngIf="secondLabel">{{ secondLabel }}</div>
+    <a [routerLink]="link" class="link" *ngIf="secondLabel">{{
+      secondLabel
+    }}</a>
   </div>
 
   <div class="input-with-icon">
     <span
-      *ngIf="_isPassword"
+      *ngIf="isPassword"
       (click)="changeIcon()"
       class="material-icons-outlined icon"
     >
