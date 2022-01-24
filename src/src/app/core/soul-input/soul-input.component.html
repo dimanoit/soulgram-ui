@@ -5,14 +5,19 @@
   </div>
 
   <div class="input-with-icon">
-    <span *ngIf="isPassword" class="material-icons-outlined icon">
-      visibility_off
+    <span
+      *ngIf="_isPassword"
+      (click)="changeIcon()"
+      class="material-icons-outlined icon"
+    >
+      {{ passwordIcon }}
     </span>
     <input
       class="soul-input"
-      [type]="isPassword ? 'password' : 'text'"
-      [placeholder]="isPassword ? '********' : placeholder"
+      [type]="inputType"
+      [placeholder]="_isPassword ? '********' : placeholder"
       (change)="onTextChange($event.target)"
+      autocomplete="off"
     />
   </div>
 </div>

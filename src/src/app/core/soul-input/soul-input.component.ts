@@ -1,4 +1,9 @@
-import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  Input,
+  OnInit,
+} from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
 @Component({
@@ -18,13 +23,16 @@ export class SoulInputComponent implements ControlValueAccessor {
   @Input() placeholder: string = '';
   @Input() label: string = '';
   @Input() secondLabel: string = '';
-  @Input() isPassword: boolean = false;
 
+  @Input() set isPassword(value: boolean) {
+    this._isPassword = value;
+    this.inputType = value ? 'password' : 'text';
+  }
+
+  _isPassword: boolean = false;
   value: string = '';
-  onTouched = () => {};
-  onChange = (value: string) => {
-    value;
-  };
+  passwordIcon: string = 'visibility_off';
+  inputType = 'text';
 
   onTextChange(target: EventTarget | null): void {
     if (target === null) {
@@ -34,6 +42,22 @@ export class SoulInputComponent implements ControlValueAccessor {
     this.writeValue(tempValue);
     this.onChange(this.value);
   }
+
+  changeIcon(): void {
+    if (this.passwordIcon === 'visibility') {
+      this.inputType = 'password';
+      this.passwordIcon = 'visibility_off';
+    } else {
+      this.inputType = 'text';
+      this.passwordIcon = 'visibility';
+    }
+  }
+
+  //#region ControlValueAccessor members
+  onTouched = () => {};
+  onChange = (value: string) => {
+    value;
+  };
 
   writeValue(inputValue: string): void {
     this.value = inputValue;
@@ -46,4 +70,5 @@ export class SoulInputComponent implements ControlValueAccessor {
   registerOnTouched(onTouched: any): void {
     this.onTouched = onTouched;
   }
+  //#endregion
 }
