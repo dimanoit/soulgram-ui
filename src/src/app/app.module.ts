@@ -8,7 +8,6 @@ import { AuthModule } from './auth/auth.module';
 import { CoreModule } from './core/core.module';
 import { routes } from './main.routes';
 
-//TODO make for sign in/up separate module
 @NgModule({
   declarations: [AppComponent],
   imports: [

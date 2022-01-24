@@ -32,10 +32,10 @@ const routes: Routes = [
   imports: [
     CommonModule,
     HttpClientModule,
-    OAuthModule.forRoot(),
     ReactiveFormsModule,
-    RouterModule.forChild(routes),
     CoreModule,
+    OAuthModule.forRoot(),
+    RouterModule.forChild(routes),
   ],
 })
 export class AuthModule {}

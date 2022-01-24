@@ -8,7 +8,7 @@ export class LocalStorageService {
     access_token: 'access_token',
   };
 
-  get getToken(): string {
+  getToken(): string {
     return localStorage.getItem('access_token') as string;
   }
 

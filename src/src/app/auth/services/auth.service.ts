@@ -23,6 +23,7 @@ export class AuthService {
     this.oauthService.clientId = identitySettings.clientId;
     this.oauthService.scope = identitySettings.scope;
     this.oauthService.dummyClientSecret = identitySettings.dummyClientSecret;
+    //CODE flow
 
     this.oauthService.setStorage(identitySettings.tokenStorage);
   }
