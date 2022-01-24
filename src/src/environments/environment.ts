@@ -15,9 +15,9 @@ const devAuthSettings: AuthSettings = {
   openIdConnect: false,
   requireHttps: false,
   tokenStorage: localStorage,
-  scope: 'openid email offline_access',
+  scope: 'openid email offline_access posts',
   skipIssuerCheck: true,
-  dummyClientSecret: '%O$^xZ7Cnm9nb5qmhr$Bgj1',
+  dummyClientSecret: 'dummy',
 };
 
 export const environment = {

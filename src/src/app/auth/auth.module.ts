@@ -7,7 +7,7 @@ import { RoutesNames } from '../main.routes';
 import { CoreModule } from '../core/core.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { OAuthModule } from 'angular-oauth2-oidc';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { AuthService } from './services/auth.service';
 
 const routes: Routes = [
@@ -23,6 +23,7 @@ const routes: Routes = [
 
 @NgModule({
   declarations: [SignUpComponent, SignInComponent],
+  providers: [AuthService],
   imports: [
     CommonModule,
     HttpClientModule,

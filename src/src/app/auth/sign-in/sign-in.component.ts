@@ -1,12 +1,12 @@
 import {
   ChangeDetectionStrategy,
   Component,
-  OnInit,
   ViewEncapsulation,
 } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { SoulColors } from 'src/app/core/soul-colors';
-import { emailValidator } from 'src/app/shared/validators/validators';
+import { UserLoginInfo } from '../models/user-login-info';
 import { AuthService } from '../services/auth.service';
 
 @Component({
@@ -16,27 +16,26 @@ import { AuthService } from '../services/auth.service';
   changeDetection: ChangeDetectionStrategy.OnPush,
   encapsulation: ViewEncapsulation.None,
 })
-export class SignInComponent implements OnInit {
+export class SignInComponent {
   colors = SoulColors;
-  loginForm: FormGroup = this.formBuilder.group({
-    login: ['', [Validators.required]],
-    password: ['', [Validators.required]],
-  });
 
+  loginForm: FormGroup;
   constructor(
     private formBuilder: FormBuilder,
-    private authService: AuthService
-  ) {}
-
-  ngOnInit(): void {}
+    private authService: AuthService,
+    private router: Router
+  ) {
+    this.loginForm = this.formBuilder.group({
+      login: ['', [Validators.required]],
+      password: ['', [Validators.required]],
+    });
+  }
 
   onSubmit(): void {
-    console.log(this.loginForm);
-    this.authService.login(
-      this.loginForm.value.login,
-      this.loginForm.value.password,
-      false,
-      'kek'
-    );
+    this.authService
+      .login(this.loginForm.value.login, this.loginForm.value.password)
+      .subscribe((object: UserLoginInfo) => {
+        console.log(object);
+      });
   }
 }
