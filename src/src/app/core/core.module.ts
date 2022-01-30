@@ -9,6 +9,6 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 @NgModule({
   declarations: [SoulInputComponent, SoulButtonComponent, NavbarComponent],
   imports: [CommonModule, ReactiveFormsModule, RouterModule],
-  exports: [SoulInputComponent, SoulButtonComponent],
+  exports: [SoulInputComponent, SoulButtonComponent, NavbarComponent],
 })
 export class CoreModule {}
