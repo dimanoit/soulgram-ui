@@ -25,14 +25,18 @@
       <div class="material-icons-outlined icon">expand_more</div>
     </div>
 
-    <form [formGroup]="loginForm" class="form-container">
-      <H2>Sign in to Soulgram</H2>
+    <form
+      [formGroup]="pageData.form"
+      class="form-container"
+      [style.padding]="formPadding"
+    >
+      <H2>{{ pageData.title }} to Soulgram</H2>
 
       <div class="grey-3-text">
-        Don't have an account yet?
-        <a [routerLink]="links.Register" routerLinkActive="active" class="link">
-          Sign up</a
-        >
+        {{ pageData.helpText }}
+        <a routerLinkActive="active" class="link" (click)="switchState()">{{
+          pageData.link
+        }}</a>
       </div>
 
       <soul-input
@@ -52,9 +56,18 @@
         [link]="links.ForgotPassword"
       ></soul-input>
 
+      <soul-input
+        *ngIf="currentState === 'Register'"
+        formControlName="rePassword"
+        class="input"
+        label="Repeat password"
+        [isPassword]="true"
+        [hint]="pageData.hint"
+      ></soul-input>
+
       <soul-button
         (click)="onSubmit()"
-        text="Sign in"
+        [text]="pageData.buttonText"
         class="input"
       ></soul-button>
 

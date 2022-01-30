@@ -20,7 +20,7 @@ export class AppComponent implements OnInit {
       return;
     }
 
-    this.router.navigateByUrl(RoutesNames.Login);
+    this.router.navigateByUrl(RoutesNames.Auth);
   }
 
   //TODO Auth Guard

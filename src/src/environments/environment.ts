@@ -4,14 +4,14 @@
 
 import { AuthSettings } from 'src/app/auth/models/auth-settings';
 
-export enum SiteUrls {
+export enum ServerUrls {
   Identity = 'https://localhost:5002',
 }
 
 const devAuthSettings: AuthSettings = {
   clientId: 'soulgram_ui',
-  tokenEndpoint: `${SiteUrls.Identity}/connect/token`,
-  userInfoEndpoint: `${SiteUrls.Identity}/connect/userinfo`,
+  tokenEndpoint: `${ServerUrls.Identity}/connect/token`,
+  userInfoEndpoint: `${ServerUrls.Identity}/connect/userinfo`,
   openIdConnect: false,
   requireHttps: false,
   tokenStorage: localStorage,

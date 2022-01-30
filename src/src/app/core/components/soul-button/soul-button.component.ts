@@ -1,5 +1,5 @@
 import { Component, ChangeDetectionStrategy, Input } from '@angular/core';
-import { SoulColors } from '../soul-colors';
+import { SoulColors } from '../../soul-colors';
 
 @Component({
   selector: 'soul-button',

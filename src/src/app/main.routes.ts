@@ -1,15 +1,14 @@
 import { Routes } from '@angular/router';
 
 export enum RoutesNames {
-  Login = 'login',
-  Register = 'register',
+  Auth = 'auth',
   ForgotPassword = 'forgot-password',
   Posts = 'posts',
 }
 
 export const routes: Routes = [
   {
-    path: RoutesNames.Login,
+    path: RoutesNames.Auth,
     loadChildren: () => import('./auth/auth.module').then((m) => m.AuthModule),
   },
   {
