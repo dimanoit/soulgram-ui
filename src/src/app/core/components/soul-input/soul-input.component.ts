@@ -26,6 +26,7 @@ export class SoulInputComponent implements ControlValueAccessor {
   @Input() secondLabel: string = '';
   @Input() link: string = '';
   @Input() hint: string = '';
+  @Input() icon: string = '';
 
   @Input() set isPassword(value: boolean) {
     this._isPassword = value;

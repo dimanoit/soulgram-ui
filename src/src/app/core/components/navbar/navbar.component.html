@@ -1,8 +1,39 @@
-<div class="container">
+<div class="soul-container">
   <div class="logo-container">
     <img class="icon-image" src="/assets/icons/logo.svg" />
     <div class="text">Soulgram</div>
   </div>
 
-  <soul-input placeholder="Search"></soul-input>
+  <!--TODO add bootstrap autocomplete attribute-->
+  <soul-input
+    icon="search"
+    placeholder="Search"
+    class="search-bar"
+  ></soul-input>
+
+  <div class="icons-block" (click)="makeActive($event.target)">
+    <div class="icon-container">
+      <span class="link-icon material-icons-outlined">{{ icons.Home }}</span>
+    </div>
+
+    <div class="icon-container">
+      <span class="link-icon material-icons-outlined">{{
+        icons.QuestionAnswer
+      }}</span>
+    </div>
+
+    <div class="icon-container">
+      <span class="link-icon material-icons-outlined">{{ icons.AddBox }}</span>
+    </div>
+
+    <div class="icon-container">
+      <span class="link-icon material-icons-outlined">{{
+        icons.Notifications
+      }}</span>
+    </div>
+
+    <div class="icon-container">
+      <span class="link-icon material-icons-outlined">{{ icons.Face }}</span>
+    </div>
+  </div>
 </div>

@@ -1,5 +1,5 @@
 <div class="input-wrapper">
-  <div class="labels">
+  <div *ngIf="label || secondLabel" class="labels">
     <div class="grey-3-text">{{ label }}</div>
     <a [routerLink]="link" class="link" *ngIf="secondLabel">{{
       secondLabel
@@ -14,6 +14,9 @@
     >
       {{ passwordIcon }}
     </span>
+
+    <span *ngIf="icon" class="material-icons-outlined icon"> {{ icon }} </span>
+
     <input
       class="soul-input"
       [type]="inputType"

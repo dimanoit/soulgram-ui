@@ -2,6 +2,9 @@ import { Routes } from '@angular/router';
 
 export enum RoutesNames {
   Auth = 'auth',
+  MessageCenter = 'chat',
+  AddPost = 'posts/add',
+  Account = 'account',
   ForgotPassword = 'forgot-password',
   Posts = 'posts',
 }
