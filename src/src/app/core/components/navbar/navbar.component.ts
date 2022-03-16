@@ -9,11 +9,11 @@ import { MenuIcons } from './menu-items.enum';
   styleUrls: ['./navbar.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class NavbarComponent implements OnInit {
+export class NavbarComponent {
   constructor(private router: Router) {}
+
   icons = MenuIcons;
 
-  ngOnInit(): void {}
   makeActive(eventTarget: EventTarget | null): void {
     const element = eventTarget as HTMLDivElement;
     const menuItem = element.outerText;

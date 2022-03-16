@@ -1,0 +1,13 @@
+.posts-container {
+  display: flex;
+
+  .stories-mock {
+    height: 100px;
+    flex-grow: 1;
+    background-color: lightblue;
+  }
+
+  .story-posts-items {
+    flex-grow: 1;
+  }
+}

@@ -1,0 +1,22 @@
+@import "/src/common-styles/variables";
+@import "/src/common-styles/text";
+@import "/src/common-styles/soul-layout";
+
+.post-container {
+  padding: 20px;
+
+  .user-info {
+    display: flex;
+    align-items: flex-start;
+
+    .photo {
+      width: 32px;
+      height: 32px;
+      background-image: url("/assets/images/mock-small-profile-1.png");
+    }
+
+    .date-publication {
+      font-size: 10px;
+    }
+  }
+}

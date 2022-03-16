@@ -1,0 +1,32 @@
+@import "/src/common-styles/variables";
+@import "/src/common-styles/text";
+@import "/src/common-styles/soul-layout";
+
+.info-container {
+  display: flex;
+  padding: 24px;
+
+  width: 428px;
+  height: 151px;
+
+  .profile-image {
+    width: 72px;
+    height: 72px;
+    margin-right: 12px;
+
+    background-image: url("/assets/images/mock-profile-url.png");
+  }
+
+  .user-info {
+    width: 264px;
+
+    .nickname {
+      margin-top: 12px;
+      margin-bottom: 21px;
+    }
+  }
+
+  .icon {
+    color: $primary;
+  }
+}
