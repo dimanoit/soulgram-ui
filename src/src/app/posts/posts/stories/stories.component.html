@@ -1,0 +1,12 @@
+<div *ngFor="let story of stories">
+  <div class="story-wrapper">
+    <div *ngIf="story.content; then thenBlock; else elseBlock"></div>
+    <ng-template #thenBlock>
+      <img class="content-img" [src]="'/assets/images/' + story.content" />
+    </ng-template>
+    <ng-template #elseBlock>
+      <soul-add-story class="content-img"></soul-add-story>
+    </ng-template>
+    <img class="profile-img" [src]="'/assets/images/' + story.profile" />
+  </div>
+</div>

@@ -4,9 +4,11 @@
 
 .post-container {
   padding: 20px;
+  margin-top: 16px;
 
   .user-info {
     display: flex;
+    flex-direction: row;
     align-items: flex-start;
 
     .photo {
@@ -18,5 +20,37 @@
     .date-publication {
       font-size: 10px;
     }
+
+    .time-name {
+      margin: 0 8px;
+    }
+  }
+
+  .post-data {
+    margin: 12px 0;
+  }
+
+  .user-reactions {
+    display: flex;
+    align-items: center;
+    color: $neutral-grey-3;
+
+    .likes {
+      margin-right: 34px;
+    }
+
+    .likes,
+    .comments {
+      display: flex;
+      align-items: center;
+
+      .quantity {
+        margin-left: 10px;
+      }
+    }
+  }
+
+  .last-item {
+    margin-left: auto;
   }
 }

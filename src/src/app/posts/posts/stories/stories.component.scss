@@ -1,0 +1,22 @@
+.story-wrapper {
+  width: 64px;
+  height: 100px;
+  position: relative;
+
+  margin-right: 12px;
+}
+
+.content-img {
+  height: 84px;
+  width: 64px;
+  border-radius: 12px;
+}
+
+.profile-img {
+  position: absolute;
+  bottom: 0px;
+  left: 16px;
+
+  height: 32px;
+  width: 32px;
+}

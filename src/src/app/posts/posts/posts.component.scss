@@ -1,13 +1,27 @@
 .posts-container {
   display: flex;
+  padding-top: 40px;
+  padding-left: 120px;
+  padding-right: 120px;
 
-  .stories-mock {
-    height: 100px;
-    flex-grow: 1;
-    background-color: lightblue;
+  .account-recommendation-container {
+    margin-right: 24px;
   }
 
   .story-posts-items {
     flex-grow: 1;
+
+    .stories-container {
+      display: flex;
+      flex-grow: 1;
+      flex-direction: row;
+      align-items: center;
+
+      padding: 0px;
+      margin-bottom: 16px;
+
+      width: 748px;
+      height: 100px;
+    }
   }
 }
