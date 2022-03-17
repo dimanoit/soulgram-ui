@@ -1,0 +1,13 @@
+<span
+  class="link-icon material-icons-outlined"
+  [matMenuTriggerFor]="menu"
+  #menuTrigger
+  >{{ icons.AddBox }}</span
+>
+
+<!--TODO add styles for material dialog-->
+<mat-menu class="menu" #menu="matMenu">
+  <li mat-menu-item (click)="addPostDialog()">Post</li>
+  <li mat-menu-item (click)="addPostDialog()">Article</li>
+  <li mat-menu-item>Drafts</li>
+</mat-menu>

@@ -7,6 +7,8 @@ import { AppComponent } from './app.component';
 import { AuthModule } from './auth/auth.module';
 import { CoreModule } from './core/core.module';
 import { routes } from './main.routes';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NavigationModule } from './navigation/navigation.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -16,6 +18,8 @@ import { routes } from './main.routes';
     RouterModule.forRoot(routes),
     CoreModule,
     AuthModule,
+    BrowserAnimationsModule,
+    NavigationModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -1,7 +1,8 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { ChangeDetectionStrategy } from '@angular/core';
 import { Router } from '@angular/router';
 import { RoutesNames } from 'src/app/main.routes';
 import { MenuIcons } from './menu-items.enum';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'soul-navbar',
@@ -10,9 +11,9 @@ import { MenuIcons } from './menu-items.enum';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class NavbarComponent {
-  constructor(private router: Router) {}
-
   icons = MenuIcons;
+
+  constructor(private router: Router) {}
 
   makeActive(eventTarget: EventTarget | null): void {
     const element = eventTarget as HTMLDivElement;

@@ -4,11 +4,10 @@ import { SoulInputComponent } from './components/soul-input/soul-input.component
 import { SoulButtonComponent } from './components/soul-button/soul-button.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
-import { NavbarComponent } from './components/navbar/navbar.component';
 
 @NgModule({
-  declarations: [SoulInputComponent, SoulButtonComponent, NavbarComponent],
+  declarations: [SoulInputComponent, SoulButtonComponent],
   imports: [CommonModule, ReactiveFormsModule, RouterModule],
-  exports: [SoulInputComponent, SoulButtonComponent, NavbarComponent],
+  exports: [SoulInputComponent, SoulButtonComponent],
 })
 export class CoreModule {}

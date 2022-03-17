@@ -1,0 +1,43 @@
+.s-modal {
+  display: flex;
+  flex-direction: column;
+
+  width: 600px;
+  height: 614px;
+
+  background: #ffffff;
+  border-radius: 12px;
+}
+
+.media-uploader-container {
+  display: flex;
+  width: 160px;
+  height: 160px;
+
+  .media-uploader {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 24px;
+
+    border: 1px solid #4adaaf;
+    box-sizing: border-box;
+    border-radius: 12px;
+
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    margin: 0px 16px;
+  }
+}
+
+.edit-buttons-container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+
+  .cancel-button {
+    margin-right: auto;
+  }
+}

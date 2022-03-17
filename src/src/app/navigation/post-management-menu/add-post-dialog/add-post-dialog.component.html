@@ -1,0 +1,29 @@
+<form [formGroup]="uploadPostForm" class="s-modal">
+  <h2>New post</h2>
+
+  <soul-input
+    formControlName="description"
+    label="Description"
+    placeholder="You can write something here..."
+  ></soul-input>
+
+  <!--TODO make chips input-->
+  <soul-input
+    formControlName="tags"
+    label="Tags (max 3)"
+    placeholder="Add tags to make your post more popular..."
+  ></soul-input>
+
+  <div class="media-uploader-container">
+    <div class="media-uploader">
+      <div class="material-icons-outlined">add_photo_alternate</div>
+      <div>Add media</div>
+    </div>
+  </div>
+
+  <div class="edit-buttons-container">
+    <div class="cancel-button">Cancel</div>
+    <soul-button text="Save as Draft"></soul-button>
+    <soul-button text="Publish"></soul-button>
+  </div>
+</form>
