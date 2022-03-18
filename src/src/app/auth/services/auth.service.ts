@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { OAuthService, UserInfo } from 'angular-oauth2-oidc';
-import { from, map, Observable, Subject } from 'rxjs';
+import { from, map, Observable, Subject, tap } from 'rxjs';
 import { SoulHttpClient } from 'src/app/shared/services/soul-http-client.service';
 import { environment, ServerUrls } from 'src/environments/environment';
 import { AuthSettings } from '../models/auth-settings';

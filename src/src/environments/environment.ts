@@ -6,6 +6,7 @@ import { AuthSettings } from 'src/app/auth/models/auth-settings';
 
 export enum ServerUrls {
   Identity = 'https://localhost:5002',
+  Post = 'https://localhost:5003',
 }
 
 const devAuthSettings: AuthSettings = {

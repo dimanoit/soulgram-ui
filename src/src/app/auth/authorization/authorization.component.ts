@@ -125,7 +125,7 @@ export class AuthorizationComponent implements OnDestroy {
       password: this.controls['password'].value as string,
       confirmPassword: this.controls['rePassword'].value as string,
     };
-    debugger;
+
     this.authService
       .register(signUpModel)
       .pipe(untilDestroyed(this))

@@ -7,6 +7,7 @@ import { CoreModule } from '../core/core.module';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatMenuModule } from '@angular/material/menu';
 import { ReactiveFormsModule } from '@angular/forms';
+import { PostsService } from '../shared/services/posts.service';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatDialogModule,
     MatMenuModule,
   ],
+  providers: [PostsService],
   exports: [NavbarComponent],
 })
 export class NavigationModule {}

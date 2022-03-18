@@ -34,9 +34,6 @@ export class NavbarComponent {
       case this.icons.QuestionAnswer:
         this.router.navigateByUrl(RoutesNames.MessageCenter);
         break;
-      case this.icons.AddBox:
-        this.router.navigateByUrl(RoutesNames.AddPost);
-        break;
       case this.icons.Notifications:
         this.showNotification();
         break;
