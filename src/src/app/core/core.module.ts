@@ -4,10 +4,15 @@ import { SoulInputComponent } from './components/soul-input/soul-input.component
 import { SoulButtonComponent } from './components/soul-button/soul-button.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
+import { FileUploaderComponent } from './components/file-uploader/file-uploader.component';
 
 @NgModule({
-  declarations: [SoulInputComponent, SoulButtonComponent],
+  declarations: [
+    SoulInputComponent,
+    SoulButtonComponent,
+    FileUploaderComponent,
+  ],
   imports: [CommonModule, ReactiveFormsModule, RouterModule],
-  exports: [SoulInputComponent, SoulButtonComponent],
+  exports: [SoulInputComponent, SoulButtonComponent, FileUploaderComponent],
 })
 export class CoreModule {}

@@ -1,0 +1,20 @@
+<div class="container">
+  <input
+    hidden
+    #file
+    type="file"
+    (change)="changeFile($event)"
+    [accept]="acceptedFormats"
+  />
+
+  <div
+    *ngIf="!fileLink"
+    class="media-uploader uploader-size"
+    (click)="openDirectory()"
+  >
+    <div class="material-icons-outlined">add_photo_alternate</div>
+    <div class="media-text">Add media</div>
+  </div>
+
+  <img class="uploaded-img uploader-size" *ngIf="fileLink" [src]="fileLink" />
+</div>
