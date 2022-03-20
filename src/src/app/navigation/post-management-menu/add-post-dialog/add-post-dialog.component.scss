@@ -1,20 +1,9 @@
 .s-modal {
   display: flex;
   flex-direction: column;
+  width: 512px;
 
-  width: 600px;
-  height: 614px;
-
-  background: #ffffff;
-  border-radius: 12px;
-}
-
-.edit-buttons-container {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-
-  .cancel-button {
-    margin-right: auto;
+  .tags-input {
+    margin-top: 24px;
   }
 }

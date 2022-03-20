@@ -1,0 +1,24 @@
+<div class="dialog">
+  <div class="header">
+    <h2 class="title">{{ title }}</h2>
+    <span class="close-button material-icons-outlined" mat-dialog-close>
+      close
+    </span>
+  </div>
+
+  <ng-content></ng-content>
+
+  <div class="edit-buttons-container">
+    <div class="cancel-button btn-text" mat-dialog-close>Cancel</div>
+
+    <soul-button
+      [text]="draft"
+      [textColor]="colors.NeutralGrey3"
+      [background]="colors.NeutralGrey0"
+      (click)="onDraft()"
+      class="draft-button"
+    ></soul-button>
+
+    <soul-button (click)="onSave()" [text]="save"></soul-button>
+  </div>
+</div>

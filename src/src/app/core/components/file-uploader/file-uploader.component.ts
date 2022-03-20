@@ -16,12 +16,13 @@ import {
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FileUploaderComponent {
-  @Input() fileLink?: string;
+  @Input() fileLinks: string[] = [];
   @Input() disabled = false;
-  @Output() uploadFile: EventEmitter<File> = new EventEmitter<File>();
+  @Output() onUploadFiles: EventEmitter<File[]> = new EventEmitter<File[]>();
 
   @ViewChild('file') fileInput!: ElementRef;
-  currentFile!: File;
+
+  private cachedFiles: File[] = [];
 
   constructor(private changeDetectorRef: ChangeDetectorRef) {}
 
@@ -33,21 +34,32 @@ export class FileUploaderComponent {
     this.fileInput.nativeElement.click();
   }
 
-  async changeFile(event: Event): Promise<void> {
+  async addFile(event: Event): Promise<void> {
+    const file = this.getFile(event);
+    if (!file) {
+      return;
+    }
+
+    const fileData = await this.getBinaryData(file);
+    this.fileLinks.push(fileData);
+
+    this.cachedFiles.push(file);
+    this.onUploadFiles.emit(this.cachedFiles);
+
+    this.changeDetectorRef.detectChanges();
+  }
+
+  private getFile(event: Event): File | null {
     const htmlInput = event?.target as HTMLInputElement;
     if (htmlInput?.files?.length === undefined) {
-      return;
+      return null;
     }
 
     if (htmlInput?.files?.length <= 0) {
-      return;
+      return null;
     }
 
-    this.currentFile = htmlInput.files[0] as File;
-    this.fileLink = await this.getBinaryData(this.currentFile);
-    this.uploadFile.emit(this.currentFile);
-
-    this.changeDetectorRef.detectChanges();
+    return htmlInput.files[0] as File;
   }
 
   private getBinaryData(file: File): Promise<string> {

@@ -1,0 +1,43 @@
+@import "/src/common-styles/variables";
+@import "/src/common-styles/text";
+
+.mat-dialog-container {
+  padding: 44px;
+
+  border-radius: 12px;
+  box-sizing: border-box;
+}
+
+.dialog {
+  display: flex;
+  flex-direction: column;
+
+  background: #ffffff;
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 44px;
+
+    .close-button {
+      color: $neutral-grey-3;
+      cursor: pointer;
+    }
+  }
+
+  .edit-buttons-container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    .draft-button {
+      margin-right: 16px;
+    }
+
+    .cancel-button {
+      margin-right: auto;
+      cursor: pointer;
+      color: $neutral-grey-3;
+    }
+  }
+}

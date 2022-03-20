@@ -2,8 +2,10 @@ import {
   ChangeDetectionStrategy,
   ChangeDetectorRef,
   Component,
+  EventEmitter,
   Input,
   OnInit,
+  Output,
 } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
@@ -33,10 +35,15 @@ export class SoulInputComponent implements ControlValueAccessor {
     this.inputType = value ? 'password' : 'text';
   }
 
+  @Output() onEnterText: EventEmitter<HTMLInputElement> =
+    new EventEmitter<HTMLInputElement>();
+
   _isPassword: boolean = false;
   value: string = '';
   passwordIcon: string = 'visibility_off';
   inputType = 'text';
+
+  constructor(private changeDetectorRef: ChangeDetectorRef) {}
 
   onTextChange(target: EventTarget | null): void {
     if (target === null) {
@@ -45,6 +52,11 @@ export class SoulInputComponent implements ControlValueAccessor {
     const tempValue = (target as HTMLInputElement).value;
     this.writeValue(tempValue);
     this.onChange(this.value);
+  }
+
+  onEnter(target: EventTarget | null) {
+    const htmlInput = target as HTMLInputElement;
+    this.onEnterText.emit(htmlInput);
   }
 
   changeIcon(): void {

@@ -8,6 +8,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatMenuModule } from '@angular/material/menu';
 import { ReactiveFormsModule } from '@angular/forms';
 import { PostsService } from '../shared/services/posts.service';
+import { ToolsService } from '../shared/services/tools.service';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,7 @@ import { PostsService } from '../shared/services/posts.service';
     MatDialogModule,
     MatMenuModule,
   ],
-  providers: [PostsService],
+  providers: [PostsService, ToolsService],
   exports: [NavbarComponent],
 })
 export class NavigationModule {}

@@ -1,4 +1,5 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { HttpEventType } from '@angular/common/http';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
 import { PostType } from 'src/app/shared/models/post-type.enum';
@@ -23,21 +24,36 @@ export class AddPostDialogComponent {
   ) {
     this.uploadPostForm = this.formBuilder.group({
       description: ['', [Validators.required]],
-      tags: ['', [Validators.required]],
+      tags: [[], [Validators.required]],
+      files: [[]],
     });
   }
 
-  onSave(): void {
+  addChipsToForm(chips: string[]): void {
+    this.uploadPostForm.patchValue({
+      tags: chips,
+    });
+  }
+
+  addUploadedFiles(files: File[]): void {
+    this.uploadPostForm.patchValue({
+      files: files,
+    });
+  }
+
+  publishPost(isDraft: boolean): void {
     const uploadPostModel: UploadPostModel = {
       userId: this.localStorage.getUserId(),
       postType: PostType.Post,
       text: this.uploadPostForm.controls['description'].value,
-      hashTags: [this.uploadPostForm.controls['tags'].value],
+      hashTags: this.uploadPostForm.controls['tags'].value,
+      files: this.uploadPostForm.controls['files'].value,
+      isDraft,
     };
 
-    this.postService
-      .uploadPost(uploadPostModel)
-      .pipe(untilDestroyed(this))
-      .subscribe();
+    // TODO add progress bar on long upload
+    this.postService.uploadPost(uploadPostModel).subscribe((event) => {
+      console.log(event);
+    });
   }
 }

@@ -2,7 +2,6 @@ import { Component, ChangeDetectionStrategy, ViewChild } from '@angular/core';
 import { MatMenuTrigger } from '@angular/material/menu';
 import { MatDialog } from '@angular/material/dialog';
 import { MenuIcons } from '../navbar/menu-items.enum';
-import { take } from 'rxjs';
 import { AddPostDialogComponent } from './add-post-dialog/add-post-dialog.component';
 
 @Component({
@@ -22,6 +21,7 @@ export class PostManagementMenuComponent {
   addPostDialog() {
     const dialogRef = this.dialog.open(AddPostDialogComponent, {
       restoreFocus: false,
+      disableClose: true,
     });
 
     dialogRef.afterClosed().subscribe(() => this.menuTrigger.focus());

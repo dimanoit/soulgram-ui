@@ -5,5 +5,7 @@ export interface UploadPostModel {
   text: string;
   postType: PostType;
   medias?: string[];
+  files?: File[];
   hashTags?: string[];
+  isDraft?: boolean;
 }

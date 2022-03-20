@@ -1,24 +1,24 @@
-<form [formGroup]="uploadPostForm" class="s-modal">
-  <h2>New post</h2>
+<soul-modal
+  class="s-modal"
+  (onSaveClick)="publishPost(true)"
+  (onDraftClick)="publishPost(false)"
+>
+  <form [formGroup]="uploadPostForm" class="s-modal">
+    <soul-input
+      formControlName="description"
+      label="Description"
+      placeholder="You can write something here..."
+    ></soul-input>
 
-  <soul-input
-    formControlName="description"
-    label="Description"
-    placeholder="You can write something here..."
-  ></soul-input>
+    <soul-chips
+      class="tags-input"
+      label="Tags (max 3)"
+      placeholder="Add tags to make your post more popular..."
+      (onEditChips)="addChipsToForm($event)"
+    ></soul-chips>
 
-  <!--TODO make chips input-->
-  <soul-input
-    formControlName="tags"
-    label="Tags (max 3)"
-    placeholder="Add tags to make your post more popular..."
-  ></soul-input>
-
-  <soul-file-uploader></soul-file-uploader>
-
-  <div class="edit-buttons-container">
-    <div class="cancel-button">Cancel</div>
-    <soul-button text="Save as Draft"></soul-button>
-    <soul-button text="Publish" (click)="onSave()"></soul-button>
-  </div>
-</form>
+    <soul-file-uploader
+      (onUploadFiles)="addUploadedFiles($event)"
+    ></soul-file-uploader>
+  </form>
+</soul-modal>

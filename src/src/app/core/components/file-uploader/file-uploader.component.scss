@@ -1,14 +1,14 @@
 @import "/src/common-styles/variables";
 
 .container {
-  width: 160px;
   height: 160px;
   margin-top: 24px;
   margin-bottom: 44px;
+  display: flex;
 }
 
 .uploader-size {
-  width: 100%;
+  width: 160px;
   height: 100%;
   border-radius: 12px;
   box-sizing: border-box;
@@ -28,6 +28,11 @@
 .uploaded-img {
   display: block;
   object-fit: cover;
+  margin-right: 16px;
+}
+
+.uploaded-img:last-of-type {
+  margin-right: 0;
 }
 
 .media-text {

@@ -3,18 +3,23 @@
     hidden
     #file
     type="file"
-    (change)="changeFile($event)"
+    (change)="addFile($event)"
     [accept]="acceptedFormats"
   />
 
+  <img
+    *ngFor="let link of fileLinks"
+    class="uploaded-img uploader-size"
+    [src]="link"
+  />
+
   <div
-    *ngIf="!fileLink"
+    *ngIf="fileLinks.length <= 2"
+    [style.margin-left]="fileLinks.length > 0 ? '16px' : '0'"
     class="media-uploader uploader-size"
     (click)="openDirectory()"
   >
     <div class="material-icons-outlined">add_photo_alternate</div>
     <div class="media-text">Add media</div>
   </div>
-
-  <img class="uploaded-img uploader-size" *ngIf="fileLink" [src]="fileLink" />
 </div>

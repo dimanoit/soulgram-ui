@@ -1,0 +1,29 @@
+@import "/src/common-styles/variables";
+@import "/src/common-styles/text";
+
+.chip-container {
+  display: flex;
+  align-items: flex-start;
+  margin-top: 8px;
+
+  .chip {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 4px 16px;
+    color: $neutral-grey-4;
+
+    height: 28px;
+    background: #f8f9fc;
+    border-radius: 8px;
+
+    margin-right: 8px;
+
+    .close-button {
+      cursor: pointer;
+      width: 16px;
+      height: 16px;
+    }
+  }
+}
