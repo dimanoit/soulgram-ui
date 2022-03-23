@@ -10,6 +10,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AuthService } from './services/auth.service';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { SoulHttpClient } from '../shared/services/soul-http-client.service';
+import { LocalStorageService } from '../shared/services/local-storage.service';
 
 const routes: Routes = [
   {
@@ -24,7 +25,7 @@ const routes: Routes = [
 
 @NgModule({
   declarations: [AuthorizationComponent, ForgotPasswordComponent],
-  providers: [AuthService, SoulHttpClient],
+  providers: [AuthService, SoulHttpClient, LocalStorageService],
   imports: [
     CommonModule,
     HttpClientModule,

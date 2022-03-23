@@ -14,9 +14,7 @@ export class PostManagementMenuComponent {
   @ViewChild('menuTrigger') menuTrigger!: MatMenuTrigger;
   icons = MenuIcons;
 
-  constructor(public dialog: MatDialog) {
-    this.addPostDialog();
-  }
+  constructor(public dialog: MatDialog) {}
 
   addPostDialog() {
     const dialogRef = this.dialog.open(AddPostDialogComponent, {
