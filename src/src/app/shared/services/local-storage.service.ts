@@ -13,6 +13,11 @@ export class LocalStorageService {
     return localStorage.getItem('access_token') as string;
   }
 
+  // TODO delete after testing
+  setTestToken(): void {
+    localStorage.setItem('access_token', 'Test');
+  }
+
   getUserId(): string {
     const userInfoObj = localStorage.getItem('id_token_claims_obj') as string;
     return JSON.parse(userInfoObj).sub;

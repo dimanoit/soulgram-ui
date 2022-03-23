@@ -14,6 +14,7 @@ import { Router } from '@angular/router';
 import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
 import { SoulColors } from 'src/app/core/soul-colors';
 import { RoutesNames } from 'src/app/main.routes';
+import { LocalStorageService } from 'src/app/shared/services/local-storage.service';
 import { AuthPageData } from '../models/auth-page-data';
 import { SignInModel } from '../models/sign-in.model';
 import { SignUpModel } from '../models/sign-up.model';
@@ -43,6 +44,7 @@ export class AuthorizationComponent implements OnDestroy {
   constructor(
     private formBuilder: FormBuilder,
     private authService: AuthService,
+    private localStorage: LocalStorageService,
     private router: Router
   ) {
     loginPageData.form = this.getLoginForm();
@@ -112,6 +114,13 @@ export class AuthorizationComponent implements OnDestroy {
       login,
       password,
     };
+
+    // TODO delete after backend deployment
+    if (login == 'Anna') {
+      this.localStorage.setTestToken();
+      this.router.navigateByUrl(RoutesNames.Posts);
+      return;
+    }
 
     this.authService
       .login(signInModel)
