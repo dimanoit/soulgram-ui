@@ -1,12 +1,12 @@
 import {
   ChangeDetectionStrategy,
-  ChangeDetectorRef,
   Component,
   EventEmitter,
   Input,
   Output,
 } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
+import { SoulInputParams } from './soul-input.params.model';
 
 @Component({
   selector: 'soul-input',
@@ -22,27 +22,23 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
   ],
 })
 export class SoulInputComponent implements ControlValueAccessor {
-  @Input() placeholder: string = '';
-  @Input() label: string = '';
-  @Input() secondLabel: string = '';
-  @Input() link: string = '';
-  @Input() hint: string = '';
-  @Input() icon: string = '';
+  @Input() params: SoulInputParams = {} as SoulInputParams;
 
   @Input() set isPassword(value: boolean) {
-    this._isPassword = value;
     this.inputType = value ? 'password' : 'text';
+  }
+
+  @Input() set isDisabled(value: boolean) {
+    this.isDisabled = value;
   }
 
   @Output() onEnterText: EventEmitter<HTMLInputElement> =
     new EventEmitter<HTMLInputElement>();
 
-  _isPassword: boolean = false;
   value: string = '';
+  _isDisabled: boolean = false;
   passwordIcon: string = 'visibility_off';
-  inputType = 'text';
-
-  constructor(private changeDetectorRef: ChangeDetectorRef) {}
+  inputType: 'text' | 'password' = 'text';
 
   onTextChange(target: EventTarget | null): void {
     if (target === null) {

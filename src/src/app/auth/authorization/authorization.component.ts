@@ -12,6 +12,7 @@ import {
 } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
+import { SoulInputParams } from 'src/app/core/components/soul-input/soul-input.params.model';
 import { SoulColors } from 'src/app/core/soul-colors';
 import { RoutesNames } from 'src/app/main.routes';
 import { LocalStorageService } from 'src/app/shared/services/local-storage.service';
@@ -19,8 +20,15 @@ import { AuthPageData } from '../models/auth-page-data';
 import { SignInModel } from '../models/sign-in.model';
 import { SignUpModel } from '../models/sign-up.model';
 import { AuthService } from '../services/auth.service';
-import { loginPageData } from './login-page-data';
-import { registerPageData } from './register-page-data';
+import {
+  loginInputParams,
+  loginPageData,
+  passwordInputParams,
+} from './login-page-data';
+import {
+  registerPageData,
+  repeatPasswordInputParams,
+} from './register-page-data';
 
 @UntilDestroy()
 @Component({
@@ -35,8 +43,11 @@ export class AuthorizationComponent implements OnDestroy {
   currentState: 'Login' | 'Register' = 'Login';
 
   colors = SoulColors;
-  links = RoutesNames;
+  loginInputParams: SoulInputParams = loginInputParams;
+  passwordInputParams: SoulInputParams = passwordInputParams;
+  rePasswordInputParams: SoulInputParams = repeatPasswordInputParams;
   formPadding: '108px 64px' | '64px 64px' = '108px 64px';
+
   get controls(): { [key: string]: AbstractControl } {
     return this.pageData.form.controls;
   }

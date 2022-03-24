@@ -42,27 +42,23 @@
       <soul-input
         formControlName="login"
         class="input"
-        label="Login"
-        placeholder="example@gmail.com"
+        [params]="loginInputParams"
       >
       </soul-input>
 
       <soul-input
         formControlName="password"
         class="input"
-        label="Password"
-        secondLabel="Forgot your password?"
         [isPassword]="true"
-        [link]="links.ForgotPassword"
+        [params]="passwordInputParams"
       ></soul-input>
 
       <soul-input
         *ngIf="currentState === 'Register'"
         formControlName="rePassword"
         class="input"
-        label="Repeat password"
         [isPassword]="true"
-        [hint]="pageData.hint"
+        [params]="rePasswordInputParams"
       ></soul-input>
 
       <soul-button

@@ -5,6 +5,7 @@ import {
   Output,
   EventEmitter,
 } from '@angular/core';
+import { SoulInputParams } from '../soul-input/soul-input.params.model';
 
 @Component({
   selector: 'soul-chips',
@@ -15,8 +16,14 @@ import {
 export class SoulChipsComponent {
   @Input() placeholder: string = '';
   @Input() label: string = '';
+  @Input() maxChips: number = 5;
 
   @Output() onEditChips: EventEmitter<string[]> = new EventEmitter<string[]>();
+
+  params: SoulInputParams = {
+    placeholder: this.placeholder,
+    label: this.label,
+  } as SoulInputParams;
 
   chips: string[] = [];
 

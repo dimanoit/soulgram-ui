@@ -1,33 +1,35 @@
 <div class="soul-input-wrapper">
-  <div *ngIf="label || secondLabel" class="labels">
-    <div class="grey-3-text">{{ label }}</div>
-    <a [routerLink]="link" class="link" *ngIf="secondLabel">{{
-      secondLabel
+  <div *ngIf="params.label || params.secondLabel" class="labels">
+    <div class="grey-3-text">{{ params.label }}</div>
+    <a [routerLink]="params.link" class="link" *ngIf="params.secondLabel">{{
+      params.secondLabel
     }}</a>
   </div>
 
   <div class="input-with-icon">
     <span
-      *ngIf="_isPassword"
+      *ngIf="inputType === 'password'"
       (click)="changeIcon()"
       class="material-icons-outlined icon"
     >
       {{ passwordIcon }}
     </span>
 
-    <span *ngIf="icon" class="material-icons-outlined icon"> {{ icon }} </span>
+    <span *ngIf="params.icon" class="material-icons-outlined icon">
+      {{ params.icon }}
+    </span>
 
     <input
       class="soul-input"
       [type]="inputType"
-      [placeholder]="_isPassword ? '********' : placeholder"
+      [placeholder]="inputType === 'password' ? '********' : params.placeholder"
       (change)="onTextChange($event.target)"
       (keyup.enter)="onEnter($event.target)"
       autocomplete="off"
     />
   </div>
 
-  <div *ngIf="hint" class="hint hint-text">
-    {{ hint }}
+  <div *ngIf="params.hint" class="hint hint-text">
+    {{ params.hint }}
   </div>
 </div>
