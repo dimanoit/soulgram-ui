@@ -17,5 +17,5 @@ export const passwordInputParams: SoulInputParams = {
 
 export const loginInputParams: SoulInputParams = {
   label: 'Login',
-  secondLabel: 'example@gmail.com',
+  placeholder: 'example@gmail.com',
 } as SoulInputParams;

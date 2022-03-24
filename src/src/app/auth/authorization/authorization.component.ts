@@ -139,7 +139,7 @@ export class AuthorizationComponent implements OnDestroy {
       .subscribe(() => this.router.navigateByUrl(RoutesNames.Posts));
   }
 
-  private register() {
+  private register(): void {
     const signUpModel: SignUpModel = {
       email: this.controls['login'].value as string,
       password: this.controls['password'].value as string,
