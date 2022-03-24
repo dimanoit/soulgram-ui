@@ -1,0 +1,27 @@
+<soul-modal
+  class="s-modal"
+  (onSaveClick)="publishPost(true)"
+  (onDraftClick)="publishPost(false)"
+>
+  <form [formGroup]="uploadPostForm" class="s-modal">
+    <soul-input
+      formControlName="title"
+      label="Title"
+      placeholder="You can write something here..."
+    ></soul-input>
+
+    <soul-text-area
+      label="Content"
+      class="text-area"
+      placeholder="Here is a place to write and format your content..."
+      (onChange)="addArticleTextToForm($event)"
+    ></soul-text-area>
+
+    <soul-chips
+      class="tags-input"
+      label="Tags (max 3)"
+      placeholder="Add tags to make your post more popular..."
+      (onEditChips)="addChipsToForm($event)"
+    ></soul-chips>
+  </form>
+</soul-modal>

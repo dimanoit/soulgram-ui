@@ -1,0 +1,13 @@
+<div class="soul-input-wrapper">
+  <div class="labels">
+    <div class="grey-3-text">{{ label }}</div>
+    <div class="link">{{ symbolsCount }} / {{ maxCount }}</div>
+  </div>
+
+  <textarea
+    class="soul-input"
+    [placeholder]="placeholder"
+    [maxLength]="maxCount"
+    (keyup)="onKeyPress($event.target)"
+  ></textarea>
+</div>

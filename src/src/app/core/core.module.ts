@@ -8,6 +8,7 @@ import { FileUploaderComponent } from './components/file-uploader/file-uploader.
 import { ModalComponent } from './components/modal/modal.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { SoulChipsComponent } from './components/soul-chips/soul-chips.component';
+import { SoulTextAreaComponent } from './components/soul-text-area/soul-text-area.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { SoulChipsComponent } from './components/soul-chips/soul-chips.component
     FileUploaderComponent,
     ModalComponent,
     SoulChipsComponent,
+    SoulTextAreaComponent,
   ],
   imports: [CommonModule, ReactiveFormsModule, RouterModule, MatDialogModule],
   exports: [
@@ -24,6 +26,7 @@ import { SoulChipsComponent } from './components/soul-chips/soul-chips.component
     FileUploaderComponent,
     ModalComponent,
     SoulChipsComponent,
+    SoulTextAreaComponent,
   ],
 })
 export class CoreModule {}

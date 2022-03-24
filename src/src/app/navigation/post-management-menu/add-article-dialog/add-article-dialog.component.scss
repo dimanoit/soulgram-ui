@@ -1,0 +1,13 @@
+.s-modal {
+  display: flex;
+  flex-direction: column;
+  width: 712px;
+
+  .tags-input {
+    margin-top: 24px;
+  }
+
+  .text-area {
+    margin-top: 24px;
+  }
+}

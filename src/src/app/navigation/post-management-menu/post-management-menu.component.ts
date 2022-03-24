@@ -3,6 +3,8 @@ import { MatMenuTrigger } from '@angular/material/menu';
 import { MatDialog } from '@angular/material/dialog';
 import { MenuIcons } from '../navbar/menu-items.enum';
 import { AddPostDialogComponent } from './add-post-dialog/add-post-dialog.component';
+import { ComponentType } from '@angular/cdk/portal';
+import { AddArticleDialogComponent } from './add-article-dialog/add-article-dialog.component';
 
 @Component({
   selector: 'soul-post-management-menu',
@@ -17,7 +19,15 @@ export class PostManagementMenuComponent {
   constructor(public dialog: MatDialog) {}
 
   addPostDialog() {
-    const dialogRef = this.dialog.open(AddPostDialogComponent, {
+    this.openDialog(AddPostDialogComponent);
+  }
+
+  addArticleDialog() {
+    this.openDialog(AddArticleDialogComponent);
+  }
+
+  private openDialog(component: ComponentType<object>): void {
+    const dialogRef = this.dialog.open(component, {
       restoreFocus: false,
       disableClose: true,
     });

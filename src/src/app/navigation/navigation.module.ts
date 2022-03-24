@@ -9,12 +9,14 @@ import { MatMenuModule } from '@angular/material/menu';
 import { ReactiveFormsModule } from '@angular/forms';
 import { PostsService } from '../shared/services/posts.service';
 import { ToolsService } from '../shared/services/tools.service';
+import { AddArticleDialogComponent } from './post-management-menu/add-article-dialog/add-article-dialog.component';
 
 @NgModule({
   declarations: [
     NavbarComponent,
     PostManagementMenuComponent,
     AddPostDialogComponent,
+    AddArticleDialogComponent,
   ],
   imports: [
     CommonModule,
