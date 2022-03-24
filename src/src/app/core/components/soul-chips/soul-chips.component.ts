@@ -4,6 +4,7 @@ import {
   Input,
   Output,
   EventEmitter,
+  OnInit,
 } from '@angular/core';
 import { SoulInputParams } from '../soul-input/soul-input.params.model';
 
@@ -13,17 +14,20 @@ import { SoulInputParams } from '../soul-input/soul-input.params.model';
   styleUrls: ['./soul-chips.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class SoulChipsComponent {
+export class SoulChipsComponent implements OnInit {
   @Input() placeholder: string = '';
   @Input() label: string = '';
   @Input() maxChips: number = 5;
 
   @Output() onEditChips: EventEmitter<string[]> = new EventEmitter<string[]>();
+  params: SoulInputParams = {} as SoulInputParams;
 
-  params: SoulInputParams = {
-    placeholder: this.placeholder,
-    label: this.label,
-  } as SoulInputParams;
+  ngOnInit(): void {
+    this.params = {
+      placeholder: this.placeholder,
+      label: this.label,
+    } as SoulInputParams;
+  }
 
   chips: string[] = [];
 
