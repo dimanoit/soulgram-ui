@@ -21,6 +21,7 @@ export class SoulChipsComponent implements OnInit {
 
   @Output() onEditChips: EventEmitter<string[]> = new EventEmitter<string[]>();
   params: SoulInputParams = {} as SoulInputParams;
+  chips: string[] = [];
 
   ngOnInit(): void {
     this.params = {
@@ -28,8 +29,6 @@ export class SoulChipsComponent implements OnInit {
       label: this.label,
     } as SoulInputParams;
   }
-
-  chips: string[] = [];
 
   addChip(input: HTMLInputElement): void {
     if (!input.value) {
