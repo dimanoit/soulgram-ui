@@ -6,8 +6,7 @@
   <form [formGroup]="uploadPostForm" class="s-modal">
     <soul-input
       formControlName="description"
-      label="Description"
-      placeholder="You can write something here..."
+      [params]="inputParams"
     ></soul-input>
 
     <soul-chips

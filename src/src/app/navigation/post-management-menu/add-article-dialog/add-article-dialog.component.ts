@@ -1,5 +1,6 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { SoulInputParams } from 'src/app/core/components/soul-input/soul-input.params.model';
 import { PostType } from 'src/app/shared/models/post-type.enum';
 import { UploadPostModel } from 'src/app/shared/models/upload-post.model';
 import { LocalStorageService } from 'src/app/shared/services/local-storage.service';
@@ -13,6 +14,10 @@ import { PostsService } from 'src/app/shared/services/posts.service';
 })
 export class AddArticleDialogComponent {
   uploadPostForm: FormGroup;
+  inputParams: SoulInputParams = {
+    label: 'Title',
+    placeholder: 'You can write something here...',
+  } as SoulInputParams;
 
   constructor(
     private formBuilder: FormBuilder,

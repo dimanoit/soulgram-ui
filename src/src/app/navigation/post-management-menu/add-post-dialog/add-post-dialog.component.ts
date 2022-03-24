@@ -1,7 +1,7 @@
-import { HttpEventType } from '@angular/common/http';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
+import { UntilDestroy } from '@ngneat/until-destroy';
+import { SoulInputParams } from 'src/app/core/components/soul-input/soul-input.params.model';
 import { PostType } from 'src/app/shared/models/post-type.enum';
 import { UploadPostModel } from 'src/app/shared/models/upload-post.model';
 import { LocalStorageService } from 'src/app/shared/services/local-storage.service';
@@ -16,6 +16,10 @@ import { PostsService } from 'src/app/shared/services/posts.service';
 })
 export class AddPostDialogComponent {
   uploadPostForm: FormGroup;
+  inputParams: SoulInputParams = {
+    label: 'Description',
+    placeholder: 'You can write something here...',
+  } as SoulInputParams;
 
   constructor(
     private formBuilder: FormBuilder,

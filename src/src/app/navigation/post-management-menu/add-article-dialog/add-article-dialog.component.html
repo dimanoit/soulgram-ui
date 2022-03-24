@@ -4,11 +4,7 @@
   (onDraftClick)="publishPost(false)"
 >
   <form [formGroup]="uploadPostForm" class="s-modal">
-    <soul-input
-      formControlName="title"
-      label="Title"
-      placeholder="You can write something here..."
-    ></soul-input>
+    <soul-input formControlName="title" [params]="inputParams"></soul-input>
 
     <soul-text-area
       label="Content"
