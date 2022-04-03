@@ -9,6 +9,7 @@ import { PostComponent } from './posts/post/post.component';
 import { StoriesComponent } from './posts/stories/stories.component';
 import { StoryComponent } from './posts/stories/story/story.component';
 import { AddStoryComponent } from './posts/stories/add-story/add-story.component';
+import { UserService } from '../shared/services/user.service';
 
 const routes: Routes = [
   {
@@ -28,5 +29,6 @@ const routes: Routes = [
     AddStoryComponent,
   ],
   imports: [CommonModule, RouterModule.forChild(routes), CoreModule],
+  providers: [UserService],
 })
 export class PostsModule {}

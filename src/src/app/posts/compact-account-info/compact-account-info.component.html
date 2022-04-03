@@ -1,10 +1,10 @@
 <div class="soul-block-layout info-container">
-  <div class="profile-image"></div>
+  <div *ngIf="userInfo?.profileImgUrl" class="profile-image"></div>
 
-  <div class="user-info">
-    <div class="title-text">Ada Ramova</div>
-    <div class="grey-3-text nickname">@letterpie</div>
-    <div class="interests grey-3-text">Music, Dancing, Movies</div>
+  <div *ngIf="userInfo" class="user-info">
+    <div class="title-text">{{ userInfo.name }}</div>
+    <div class="grey-3-text nickname">{{ userInfo.nickname }}</div>
+    <div class="interests grey-3-text">{{ userInfo.hobbies }}</div>
   </div>
 
   <div class="icon">
