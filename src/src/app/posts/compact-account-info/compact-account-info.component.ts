@@ -3,10 +3,9 @@ import {
   OnInit,
   ChangeDetectionStrategy,
   ChangeDetectorRef,
-  OnDestroy,
 } from '@angular/core';
 import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
-import { CompactUserInfo } from 'src/app/shared/models/compact-user-info.model';
+import { CompactUserInfo } from 'src/app/posts/compact-account-info/compact-user-info.model';
 import { UserService } from 'src/app/shared/services/user.service';
 
 @UntilDestroy()
@@ -16,7 +15,7 @@ import { UserService } from 'src/app/shared/services/user.service';
   styleUrls: ['./compact-account-info.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class CompactAccountInfoComponent implements OnInit, OnDestroy {
+export class CompactAccountInfoComponent implements OnInit {
   constructor(
     private userService: UserService,
     private changeDetectorRef: ChangeDetectorRef
@@ -33,6 +32,4 @@ export class CompactAccountInfoComponent implements OnInit, OnDestroy {
         this.changeDetectorRef.detectChanges();
       });
   }
-
-  ngOnDestroy(): void {}
 }

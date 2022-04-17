@@ -9,6 +9,7 @@ import { ModalComponent } from './components/modal/modal.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { SoulChipsComponent } from './components/soul-chips/soul-chips.component';
 import { SoulTextAreaComponent } from './components/soul-text-area/soul-text-area.component';
+import { ToDateViewPipe } from './pipes/to-date-view.pipe';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { SoulTextAreaComponent } from './components/soul-text-area/soul-text-are
     ModalComponent,
     SoulChipsComponent,
     SoulTextAreaComponent,
+    ToDateViewPipe,
   ],
   imports: [CommonModule, ReactiveFormsModule, RouterModule, MatDialogModule],
   exports: [
@@ -27,6 +29,7 @@ import { SoulTextAreaComponent } from './components/soul-text-area/soul-text-are
     ModalComponent,
     SoulChipsComponent,
     SoulTextAreaComponent,
+    ToDateViewPipe,
   ],
 })
 export class CoreModule {}

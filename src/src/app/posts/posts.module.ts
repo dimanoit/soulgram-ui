@@ -10,6 +10,7 @@ import { StoriesComponent } from './posts/stories/stories.component';
 import { StoryComponent } from './posts/stories/story/story.component';
 import { AddStoryComponent } from './posts/stories/add-story/add-story.component';
 import { UserService } from '../shared/services/user.service';
+import { ToDateViewPipe } from '../core/pipes/to-date-view.pipe';
 
 const routes: Routes = [
   {
@@ -29,6 +30,6 @@ const routes: Routes = [
     AddStoryComponent,
   ],
   imports: [CommonModule, RouterModule.forChild(routes), CoreModule],
-  providers: [UserService],
+  providers: [UserService, ToDateViewPipe],
 })
 export class PostsModule {}

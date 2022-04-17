@@ -32,7 +32,7 @@ export class AuthService {
   }
 
   register(signUpModel: SignUpModel): Observable<void> {
-    return this.httpClient.post(ServerUrls.Identity, 'account', signUpModel);
+    return this.httpClient.post('account', signUpModel);
   }
 
   private addOptions(identitySettings: AuthSettings) {

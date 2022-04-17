@@ -1,13 +1,18 @@
 <div class="post-container soul-block-layout">
   <div class="user-info">
-    <div class="photo"></div>
+    <div
+      class="photo"
+      [style.background-image]="userCompactInfo.profileImgUrl"
+    ></div>
 
     <div class="time-name">
-      <div class="hint-text">Annette Black</div>
-      <div class="date-publication grey-3-text">5h</div>
+      <div class="hint-text">{{ userCompactInfo.name }}</div>
+      <div class="date-publication grey-3-text">
+        {{ post.creationDate | toDateView }}
+      </div>
     </div>
 
-    <div class="hint-text grey-3-text">@catlover</div>
+    <div class="hint-text grey-3-text">{{ userCompactInfo.nickname }}}</div>
 
     <div class="grey-3-text last-item">
       <span class="material-icons"> more_vert </span>
@@ -16,10 +21,10 @@
 
   <div class="post-data">
     <div class="description">
-      Does smb know any good movie? Like Love actually
+      {{ post.text }}
     </div>
 
-    <div class="tags">#movie #peace</div>
+    <div class="tags">{{ post.hashtags }}</div>
 
     <div class="media"></div>
   </div>
@@ -27,12 +32,12 @@
   <div class="user-reactions">
     <div class="likes hint-text">
       <div class="material-icons">favorite_border</div>
-      <div class="quantity">254</div>
+      <div class="quantity">{{ post.metadata.likes }}</div>
     </div>
 
     <div class="comments hint-text">
       <div class="material-icons">chat_bubble_outline</div>
-      <div class="quantity">32</div>
+      <div class="quantity">{{ post.metadata.comments }}</div>
     </div>
 
     <div class="send-post last-item">

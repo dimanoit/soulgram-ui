@@ -6,7 +6,7 @@ import { AuthSettings } from 'src/app/auth/models/auth-settings';
 
 export enum ServerUrls {
   Identity = 'https://localhost:5002',
-  Post = 'https://localhost:5003',
+  Gateway = 'https://localhost:5000',
 }
 
 const devAuthSettings: AuthSettings = {
@@ -16,7 +16,7 @@ const devAuthSettings: AuthSettings = {
   openIdConnect: false,
   requireHttps: false,
   tokenStorage: localStorage,
-  scope: 'openid email offline_access posts',
+  scope: 'gateway openid email offline_access',
   skipIssuerCheck: true,
   dummyClientSecret: 'dummy',
 };

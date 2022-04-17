@@ -1,7 +1,6 @@
 import {
   ChangeDetectionStrategy,
   Component,
-  OnDestroy,
   ViewEncapsulation,
 } from '@angular/core';
 import {
@@ -38,7 +37,7 @@ import {
   changeDetection: ChangeDetectionStrategy.OnPush,
   encapsulation: ViewEncapsulation.None,
 })
-export class AuthorizationComponent implements OnDestroy {
+export class AuthorizationComponent {
   pageData: AuthPageData = loginPageData;
   currentState: 'Login' | 'Register' = 'Login';
 
@@ -151,6 +150,4 @@ export class AuthorizationComponent implements OnDestroy {
       .pipe(untilDestroyed(this))
       .subscribe(() => this.login(signUpModel.email, signUpModel.password));
   }
-
-  ngOnDestroy(): void {}
 }

@@ -13,27 +13,27 @@ export class SoulHttpClient {
     private localStorage: LocalStorageService
   ) {}
 
-  private getApiUrl(url: ServerUrls): string {
-    return `${url}/api/`;
+  private getUrl(endPoint: string): string {
+    return `${ServerUrls.Gateway}/${endPoint}`;
   }
 
-  post<T>(url: ServerUrls, endPoint: string, params: Object): Observable<T> {
+  post<T>(endPoint: string, params: Object): Observable<T> {
     return this.http.post<T>(
-      this.getApiUrl(url) + endPoint,
+      this.getUrl(endPoint),
       params,
       this.getHttpRequestOptions()
     );
   }
 
-  postProgress<T>(url: ServerUrls, endPoint: string, params: Object) {
+  postProgress<T>(endPoint: string, params: Object) {
     const options = this.getProgressHttpOptions();
 
-    return this.http.post<T>(this.getApiUrl(url) + endPoint, params, options);
+    return this.http.post<T>(this.getUrl(endPoint), params, options);
   }
 
-  get<T>(url: ServerUrls, endPoint: string): Observable<T> {
+  get<T>(endPoint: string): Observable<T> {
     return this.http.get<T>(
-      this.getApiUrl(url) + endPoint,
+      this.getUrl(endPoint),
       this.getHttpRequestOptions()
     );
   }

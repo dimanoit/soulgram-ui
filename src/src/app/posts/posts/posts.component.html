@@ -9,7 +9,7 @@
     <soul-stories class="stories-container"></soul-stories>
 
     <div class="posts">
-      <soul-post></soul-post>
+      <soul-post *ngFor="let post of posts" [post]="post"></soul-post>
     </div>
   </div>
 </div>
