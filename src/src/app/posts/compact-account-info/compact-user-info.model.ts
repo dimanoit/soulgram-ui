@@ -1,6 +1,7 @@
 export interface CompactUserInfo {
-  name: string;
+  id: string,
+  fullname: string;
   nickname: string;
   hobbies: string;
-  profileImgUrl: string;
+  imgUrl: string;
 }
