@@ -1,4 +1,9 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  ChangeDetectionStrategy,
+  ChangeDetectorRef,
+} from '@angular/core';
 import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
 import { PageResponseModel } from 'src/app/core/models/page-response.model';
 import { PostsService } from 'src/app/shared/services/posts.service';
@@ -13,7 +18,10 @@ import { PostViewModel } from './models/post-view.model';
 })
 export class PostsComponent implements OnInit {
   posts: PostViewModel[] = [];
-  constructor(private postService: PostsService) {}
+  constructor(
+    private postService: PostsService,
+    private changeDetectorRef: ChangeDetectorRef
+  ) {}
 
   ngOnInit(): void {
     this.postService
@@ -21,6 +29,7 @@ export class PostsComponent implements OnInit {
       .pipe(untilDestroyed(this))
       .subscribe((response: PageResponseModel<PostViewModel>) => {
         this.posts = response.data;
+        this.changeDetectorRef.detectChanges();
       });
   }
 }

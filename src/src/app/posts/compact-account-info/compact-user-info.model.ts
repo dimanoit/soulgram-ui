@@ -1,7 +1,7 @@
 export interface CompactUserInfo {
-  id: string,
+  id: string;
   fullname: string;
   nickname: string;
-  hobbies: string;
+  hobbies: string[];
   imgUrl: string;
 }

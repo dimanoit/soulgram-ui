@@ -1,18 +1,15 @@
 <div class="post-container soul-block-layout">
-  <div class="user-info">
-    <div
-      class="photo"
-      [style.background-image]="userCompactInfo.profileImgUrl"
-    ></div>
+  <div *ngIf="userCompactInfo" class="user-info">
+    <div class="photo" [style.background-image]="userCompactInfo.imgUrl"></div>
 
     <div class="time-name">
-      <div class="hint-text">{{ userCompactInfo.name }}</div>
+      <div class="hint-text">{{ userCompactInfo.fullname }}</div>
       <div class="date-publication grey-3-text">
         {{ post.creationDate | toDateView }}
       </div>
     </div>
 
-    <div class="hint-text grey-3-text">{{ userCompactInfo.nickname }}}</div>
+    <div class="hint-text grey-3-text">{{ userCompactInfo.nickname }}</div>
 
     <div class="grey-3-text last-item">
       <span class="material-icons"> more_vert </span>
@@ -32,12 +29,12 @@
   <div class="user-reactions">
     <div class="likes hint-text">
       <div class="material-icons">favorite_border</div>
-      <div class="quantity">{{ post.metadata.likes }}</div>
+      <div class="quantity">{{ post?.metadata?.likes }}</div>
     </div>
 
     <div class="comments hint-text">
       <div class="material-icons">chat_bubble_outline</div>
-      <div class="quantity">{{ post.metadata.comments }}</div>
+      <div class="quantity">{{ post?.metadata?.comments }}</div>
     </div>
 
     <div class="send-post last-item">
