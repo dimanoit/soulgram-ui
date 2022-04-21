@@ -11,6 +11,10 @@ export class ToDateViewPipe implements PipeTransform {
   }
 
   private getDateViewFormat(date: Date): string {
+    if (typeof date === 'string') {
+      date = new Date(date);
+    }
+
     const now = new Date();
 
     const milliseconds = +now - +date;
