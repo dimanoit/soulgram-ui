@@ -28,6 +28,12 @@
 
   .post-data {
     margin: 12px 0;
+
+    .media {
+      width: 708px;
+      border-radius: 12px;
+      object-fit: cover;
+    }
   }
 
   .user-reactions {

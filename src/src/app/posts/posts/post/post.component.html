@@ -23,7 +23,8 @@
 
     <div class="tags">{{ post.hashtags }}</div>
 
-    <div class="media"></div>
+    <!--TODO get all files not only first-->
+    <img *ngIf="post.medias" class="media" [src]="post.medias[0]" />
   </div>
 
   <div class="user-reactions">

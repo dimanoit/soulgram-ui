@@ -1,5 +1,5 @@
 <div class="soul-block-layout info-container">
-  <div *ngIf="userInfo?.imgUrl" class="profile-image"></div>
+  <img *ngIf="userInfo?.imgUrl" class="profile-image" [src]="userInfo.imgUrl" />
 
   <div *ngIf="userInfo" class="user-info">
     <div class="title-text">{{ userInfo.fullname }}</div>

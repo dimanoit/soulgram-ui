@@ -15,7 +15,8 @@
     height: 72px;
     margin-right: 12px;
 
-    background-image: url("/assets/images/mock-profile-url.png");
+    border-radius: 50px;
+    object-fit: cover;
   }
 
   .user-info {
@@ -29,5 +30,6 @@
 
   .icon {
     color: $primary;
+    cursor: pointer;
   }
 }
