@@ -48,11 +48,9 @@ export class AddPostDialogComponent {
   publishPost(isDraft: boolean): void {
     const uploadPostModel: UploadPostModel = {
       userId: this.localStorage.getUserId(),
-      postType: PostType.Post,
       text: this.uploadPostForm.controls['description'].value,
       hashTags: this.uploadPostForm.controls['tags'].value,
       files: this.uploadPostForm.controls['files'].value,
-      isDraft,
     };
 
     // TODO add progress bar on long upload
