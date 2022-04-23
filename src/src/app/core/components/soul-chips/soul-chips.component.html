@@ -2,6 +2,7 @@
   class="chip-input"
   [params]="params"
   (onEnterText)="addChip($event)"
+  [isDisabled]="isDisabled()"
 ></soul-input>
 
 <div class="chip-container">

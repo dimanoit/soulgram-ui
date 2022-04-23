@@ -1,7 +1,8 @@
 <soul-modal
+  title="New Article"
   class="s-modal"
-  (onSaveClick)="publishPost(true)"
-  (onDraftClick)="publishPost(false)"
+  (onSaveClick)="uploadArticle()"
+  (onDraftClick)="uploadArticle()"
 >
   <form [formGroup]="uploadPostForm" class="s-modal">
     <soul-input formControlName="title" [params]="inputParams"></soul-input>

@@ -2,6 +2,7 @@ import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { SoulInputParams } from 'src/app/core/components/soul-input/soul-input.params.model';
 import { PostType } from 'src/app/posts/posts/models/post-type.enum';
+import { UploadArticleModel } from 'src/app/posts/posts/models/upload-article.model';
 import { UploadPostModel } from 'src/app/posts/posts/models/upload-post.model';
 import { LocalStorageService } from 'src/app/shared/services/local-storage.service';
 import { PostsService } from 'src/app/shared/services/posts.service';
@@ -43,14 +44,12 @@ export class AddArticleDialogComponent {
     });
   }
 
-  publishPost(isDraft: boolean): void {
-    const uploadPostModel: UploadPostModel = {
+  uploadArticle(): void {
+    const uploadPostModel: UploadArticleModel = {
       userId: this.localStorage.getUserId(),
-      postType: PostType.Article,
-      text: this.uploadPostForm.controls['description'].value,
+      title: this.uploadPostForm.controls['title'].value,
+      text: this.uploadPostForm.controls['content'].value,
       hashTags: this.uploadPostForm.controls['tags'].value,
-      files: this.uploadPostForm.controls['files'].value,
-      isDraft,
     };
 
     this.postService.uploadPost(uploadPostModel).subscribe((event) => {

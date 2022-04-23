@@ -26,6 +26,7 @@
       (change)="onTextChange($event.target)"
       (keyup.enter)="onEnter($event.target)"
       autocomplete="off"
+      [disabled]="isDisabledInput()"
     />
   </div>
 

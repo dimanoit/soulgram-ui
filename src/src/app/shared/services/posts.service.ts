@@ -21,6 +21,12 @@ export class PostsService {
     return this.httpClient.postProgress('posts', formData);
   }
 
+  uploadArticle(post: UploadPostModel) {
+    const formData = this.tools.classToFormData(post);
+
+    return this.httpClient.postProgress('posts', formData);
+  }
+
   getPostsByUserId(): Observable<PageResponseModel<PostViewModel>> {
     const userId = this.localStorage.getUserId();
     return this.httpClient.get(`posts/user/${userId}`);

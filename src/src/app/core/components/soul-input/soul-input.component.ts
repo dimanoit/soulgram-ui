@@ -29,16 +29,20 @@ export class SoulInputComponent implements ControlValueAccessor {
   }
 
   @Input() set isDisabled(value: boolean) {
-    this.isDisabled = value;
+    this._isDisabled = value;
   }
 
   @Output() onEnterText: EventEmitter<HTMLInputElement> =
     new EventEmitter<HTMLInputElement>();
 
+  private _isDisabled: boolean = false;
   value: string = '';
-  _isDisabled: boolean = false;
   passwordIcon: string = 'visibility_off';
   inputType: 'text' | 'password' = 'text';
+
+  isDisabledInput(): boolean {
+    return this._isDisabled;
+  }
 
   onTextChange(target: EventTarget | null): void {
     if (target === null) {
