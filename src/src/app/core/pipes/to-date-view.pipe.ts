@@ -35,13 +35,17 @@ export class ToDateViewPipe implements PipeTransform {
 
     const day = Math.round(hours / 24);
     if (day < 7) {
-      return date + 'd';
+      return day + 'd';
     }
 
     if (day == 7) {
       return 'w';
     }
 
-    return date.toLocaleDateString();
+    return this.toShortDateString(date);
+  }
+
+  private toShortDateString(date: Date) {
+    return date.getMonth() + ',' + date.getFullYear();
   }
 }

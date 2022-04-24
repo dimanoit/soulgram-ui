@@ -11,6 +11,7 @@ import { StoryComponent } from './posts/stories/story/story.component';
 import { AddStoryComponent } from './posts/stories/add-story/add-story.component';
 import { UserService } from '../shared/services/user.service';
 import { ToDateViewPipe } from '../core/pipes/to-date-view.pipe';
+import { MatMenuModule } from '@angular/material/menu';
 
 const routes: Routes = [
   {
@@ -29,7 +30,12 @@ const routes: Routes = [
     StoryComponent,
     AddStoryComponent,
   ],
-  imports: [CommonModule, RouterModule.forChild(routes), CoreModule],
+  imports: [
+    CommonModule,
+    RouterModule.forChild(routes),
+    CoreModule,
+    MatMenuModule,
+  ],
   providers: [UserService, ToDateViewPipe],
 })
 export class PostsModule {}

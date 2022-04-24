@@ -21,6 +21,10 @@ export class PostsService {
     return this.httpClient.postProgress('posts', formData);
   }
 
+  deletePost(postId: string): Observable<void> {
+    return this.httpClient.delete(`posts/${postId}`);
+  }
+
   uploadArticle(post: UploadPostModel) {
     const formData = this.tools.classToFormData(post);
 

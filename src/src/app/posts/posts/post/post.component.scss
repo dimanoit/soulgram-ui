@@ -14,7 +14,7 @@
     .photo {
       width: 32px;
       height: 32px;
-      background-image: url("/assets/images/mock-small-profile-1.png");
+      border-radius: 50px;
     }
 
     .date-publication {
@@ -31,6 +31,7 @@
 
     .media {
       width: 708px;
+      height: 539px;
       border-radius: 12px;
       object-fit: cover;
     }

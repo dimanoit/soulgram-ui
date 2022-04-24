@@ -1,6 +1,6 @@
 <div class="post-container soul-block-layout">
   <div *ngIf="userCompactInfo" class="user-info">
-    <div class="photo" [style.background-image]="userCompactInfo.imgUrl"></div>
+    <img class="photo" [src]="userCompactInfo.imgUrl" />
 
     <div class="time-name">
       <div class="hint-text">{{ userCompactInfo.fullname }}</div>
@@ -12,7 +12,15 @@
     <div class="hint-text grey-3-text">{{ userCompactInfo.nickname }}</div>
 
     <div class="grey-3-text last-item">
-      <span class="material-icons"> more_vert </span>
+      <span class="material-icons" [matMenuTriggerFor]="menu" #menuTrigger>
+        more_vert
+      </span>
+
+      <mat-menu class="menu" #menu="matMenu">
+        <li mat-menu-item (click)="deletePost(post.id)">Delete</li>
+        <li mat-menu-item (click)="makeDraft(post.id)">Make a draft</li>
+        <li mat-menu-item>Drafts</li>
+      </mat-menu>
     </div>
   </div>
 

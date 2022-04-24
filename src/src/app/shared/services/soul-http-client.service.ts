@@ -17,10 +17,17 @@ export class SoulHttpClient {
     return `${ServerUrls.Gateway}/${endPoint}`;
   }
 
-  post<T>(endPoint: string, params: Object): Observable<T> {
+  post<T>(endPoint: string, body: Object): Observable<T> {
     return this.http.post<T>(
       this.getUrl(endPoint),
-      params,
+      body,
+      this.getHttpRequestOptions()
+    );
+  }
+
+  delete<T>(endPoint: string): Observable<T> {
+    return this.http.delete<T>(
+      this.getUrl(endPoint),
       this.getHttpRequestOptions()
     );
   }

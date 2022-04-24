@@ -1,6 +1,7 @@
+import { HttpEventType } from '@angular/common/http';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { UntilDestroy } from '@ngneat/until-destroy';
+import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
 import { SoulInputParams } from 'src/app/core/components/soul-input/soul-input.params.model';
 import { PostType } from 'src/app/posts/posts/models/post-type.enum';
 import { UploadPostModel } from 'src/app/posts/posts/models/upload-post.model';
@@ -54,8 +55,13 @@ export class AddPostDialogComponent {
     };
 
     // TODO add progress bar on long upload
-    this.postService.uploadPost(uploadPostModel).subscribe((event) => {
-      console.log(event);
-    });
+    this.postService
+      .uploadPost(uploadPostModel)
+      .pipe(untilDestroyed(this))
+      .subscribe((event) => {
+        if (event.type === HttpEventType.Response) {
+          alert('Posted');
+        }
+      });
   }
 }
