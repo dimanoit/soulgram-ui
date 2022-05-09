@@ -132,10 +132,11 @@ export class AuthorizationComponent {
       return;
     }
 
+    // TODO need redirect to Posts, General Interest it's temp solution
     this.authService
       .login(signInModel)
       .pipe(untilDestroyed(this))
-      .subscribe(() => this.router.navigateByUrl(RoutesNames.Posts));
+      .subscribe(() => this.router.navigateByUrl(RoutesNames.GeneralInterests));
   }
 
   private register(): void {
