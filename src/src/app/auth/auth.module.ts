@@ -11,11 +11,16 @@ import { AuthService } from './services/auth.service';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { SoulHttpClient } from '../shared/services/soul-http-client.service';
 import { LocalStorageService } from '../shared/services/local-storage.service';
+import { GeneralInterestsComponent } from './general-interests/general-interests.component';
 
 const routes: Routes = [
   {
     path: '',
     component: AuthorizationComponent,
+  },
+  {
+    path: 'general-interests',
+    component: GeneralInterestsComponent,
   },
   {
     path: RoutesNames.ForgotPassword,
@@ -24,7 +29,11 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [AuthorizationComponent, ForgotPasswordComponent],
+  declarations: [
+    AuthorizationComponent,
+    ForgotPasswordComponent,
+    GeneralInterestsComponent,
+  ],
   providers: [AuthService, SoulHttpClient, LocalStorageService],
   imports: [
     CommonModule,

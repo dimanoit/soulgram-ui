@@ -7,6 +7,7 @@ export enum RoutesNames {
   Account = 'account',
   ForgotPassword = 'forgot-password',
   Posts = 'posts',
+  GeneralInterests = 'general-interests',
 }
 
 export const routes: Routes = [
