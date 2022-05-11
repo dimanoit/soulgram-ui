@@ -12,6 +12,7 @@ import { ForgotPasswordComponent } from './forgot-password/forgot-password.compo
 import { SoulHttpClient } from '../shared/services/soul-http-client.service';
 import { LocalStorageService } from '../shared/services/local-storage.service';
 import { GeneralInterestsComponent } from './general-interests/general-interests.component';
+import { InterestsService } from '../shared/services/interests.service';
 
 const routes: Routes = [
   {
@@ -19,7 +20,7 @@ const routes: Routes = [
     component: AuthorizationComponent,
   },
   {
-    path: 'general-interests',
+    path: RoutesNames.GeneralInterests,
     component: GeneralInterestsComponent,
   },
   {
@@ -34,7 +35,12 @@ const routes: Routes = [
     ForgotPasswordComponent,
     GeneralInterestsComponent,
   ],
-  providers: [AuthService, SoulHttpClient, LocalStorageService],
+  providers: [
+    AuthService,
+    SoulHttpClient,
+    LocalStorageService,
+    InterestsService,
+  ],
   imports: [
     CommonModule,
     HttpClientModule,

@@ -1,7 +1,25 @@
-<div class="interests-container">
-  <h2>Choose your interests</h2>
+<div class="content-wrapper">
+  <div class="container">
+    <h2>Choose your interests</h2>
 
-  <div class="description">To find the best match between your soulmates.</div>
+    <div class="description">
+      To find the best match between your soulmates.
+    </div>
 
-  <div *ngFor="item; of"></div>
+    <div class="interests">
+      <div
+        *ngFor="let item of interests"
+        class="interest"
+        (click)="selectInterest(item)"
+      >
+        {{ item.toString() }}
+      </div>
+    </div>
+
+    <div class="action-container">
+      <div class="skip-label">Skip for later</div>
+
+      <soul-button class="confirm-button" text="Confirm"></soul-button>
+    </div>
+  </div>
 </div>
