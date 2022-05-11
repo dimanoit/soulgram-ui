@@ -1,95 +1,97 @@
-<div class="container">
-  <div class="info-container">
-    <div class="logo-container">
-      <img class="icon-image" src="/assets/icons/logo.svg" />
-      <div class="text">Soulgram</div>
-    </div>
-
-    <div class="idea-message grey-3-text">
-      A social network for finding friends and people with similar interests and
-      thoughts.
-    </div>
-
-    <H1 class="welcome-message">
-      We can help to find your
-      <span class="marked-word">soulmate</span>
-      today.
-    </H1>
-
-    <div class="people-image"></div>
-  </div>
-
-  <div class="right-wrapper">
-    <div class="change-language">
-      <div>English</div>
-      <div class="material-icons-outlined icon">expand_more</div>
-    </div>
-
-    <form
-      [formGroup]="pageData.form"
-      class="form-container"
-      [style.padding]="formPadding"
-    >
-      <H2>{{ pageData.title }} to Soulgram</H2>
-
-      <div class="grey-3-text">
-        {{ pageData.helpText }}
-        <a routerLinkActive="active" class="link" (click)="switchState()">{{
-          pageData.link
-        }}</a>
+<div class="content-wrapper">
+  <div class="container">
+    <div class="info-container">
+      <div class="logo-container">
+        <img class="icon-image" src="/assets/icons/logo.svg" />
+        <div class="text">Soulgram</div>
       </div>
 
-      <soul-input
-        formControlName="login"
-        class="input"
-        [params]="loginInputParams"
+      <div class="idea-message grey-3-text">
+        A social network for finding friends and people with similar interests
+        and thoughts.
+      </div>
+
+      <H1 class="welcome-message">
+        We can help to find your
+        <span class="marked-word">soulmate</span>
+        today.
+      </H1>
+
+      <div class="people-image"></div>
+    </div>
+
+    <div class="right-wrapper">
+      <div class="change-language">
+        <div>English</div>
+        <div class="material-icons-outlined icon">expand_more</div>
+      </div>
+
+      <form
+        [formGroup]="pageData.form"
+        class="form-container"
+        [style.padding]="formPadding"
       >
-      </soul-input>
+        <H2>{{ pageData.title }} to Soulgram</H2>
 
-      <soul-input
-        formControlName="password"
-        class="input"
-        [isPassword]="true"
-        [params]="passwordInputParams"
-      ></soul-input>
+        <div class="grey-3-text">
+          {{ pageData.helpText }}
+          <a routerLinkActive="active" class="link" (click)="switchState()">{{
+            pageData.link
+          }}</a>
+        </div>
 
-      <soul-input
-        *ngIf="currentState === 'Register'"
-        formControlName="rePassword"
-        class="input"
-        [isPassword]="true"
-        [params]="rePasswordInputParams"
-      ></soul-input>
+        <soul-input
+          formControlName="login"
+          class="input"
+          [params]="loginInputParams"
+        >
+        </soul-input>
 
-      <soul-button
-        (click)="onSubmit()"
-        [text]="pageData.buttonText"
-        class="input"
-      ></soul-button>
+        <soul-input
+          formControlName="password"
+          class="input"
+          [isPassword]="true"
+          [params]="passwordInputParams"
+        ></soul-input>
 
-      <div class="or-section">
-        <div class="line"></div>
-        <div class="btn-text or">or</div>
-        <div class="line"></div>
-      </div>
-
-      <div class="external-login">
-        <soul-button
-          [textColor]="colors.NeutralGrey3"
-          [background]="colors.NeutralGrey0"
-          text="Google"
-          iconUrl="/assets/icons/google-color.svg"
-          class="ex-button"
-        ></soul-button>
+        <soul-input
+          *ngIf="currentState === 'Register'"
+          formControlName="rePassword"
+          class="input"
+          [isPassword]="true"
+          [params]="rePasswordInputParams"
+        ></soul-input>
 
         <soul-button
-          [textColor]="colors.NeutralGrey3"
-          [background]="colors.NeutralGrey0"
-          text="Facebook"
-          iconUrl="/assets/icons/facebook.svg"
-          class="ex-button"
+          (click)="onSubmit()"
+          [text]="pageData.buttonText"
+          class="input"
         ></soul-button>
-      </div>
-    </form>
+
+        <div class="or-section">
+          <div class="line"></div>
+          <div class="btn-text or">or</div>
+          <div class="line"></div>
+        </div>
+
+        <div class="external-login">
+          <soul-button
+            [textColor]="colors.NeutralGrey3"
+            [background]="colors.NeutralGrey0"
+            text="Google"
+            iconUrl="/assets/icons/google-color.svg"
+            class="ex-button"
+          ></soul-button>
+
+          <soul-button
+            [textColor]="colors.NeutralGrey3"
+            [background]="colors.NeutralGrey0"
+            text="Facebook"
+            iconUrl="/assets/icons/facebook.svg"
+            class="ex-button"
+          ></soul-button>
+        </div>
+      </form>
+    </div>
   </div>
 </div>

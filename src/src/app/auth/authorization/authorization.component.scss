@@ -1,14 +1,16 @@
 @import "/src/common-styles/variables";
 @import "/src/common-styles/text";
 
-body {
+
+.content-wrapper{
   background-color: $bg-primary;
+  height: 100vh;
 }
 
 .container {
   display: flex;
   justify-content: space-evenly;
-  margin-top: 5%;
+  padding-top: 5%;
 
   .info-container {
     .logo-container {
