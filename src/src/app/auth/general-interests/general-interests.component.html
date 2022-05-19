@@ -8,18 +8,24 @@
 
     <div class="interests">
       <div
-        *ngFor="let item of interests"
+        *ngFor="let item of interests$ | async; trackBy: trackByFunc"
         class="interest"
-        (click)="selectInterest(item)"
+        [class.selected]="item.isSelected"
+        (click)="toggleSelection(item)"
       >
-        {{ item.toString() }}
+        {{ interestEnumType[item.interest] }}
       </div>
     </div>
 
     <div class="action-container">
       <div class="skip-label">Skip for later</div>
 
-      <soul-button class="confirm-button" text="Confirm"></soul-button>
+      <soul-button
+        class="confirm-button"
+        text="Confirm"
+        (click)="confirm()"
+        [disabled]="disabledComplete"
+      ></soul-button>
     </div>
   </div>
 </div>

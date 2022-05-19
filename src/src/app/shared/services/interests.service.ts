@@ -10,4 +10,8 @@ export class InterestsService {
   getInterests(): Observable<InterestType[]> {
     return this.httpClient.get('interests');
   }
+
+  setInterestsForUser(interests: InterestType[]): Observable<void> {
+    return this.httpClient.post('interests', interests);
+  }
 }

@@ -51,6 +51,13 @@
     border-radius: 36px;
     cursor: pointer;
   }
+
+  .interest:hover,
+  .interest.selected {
+    color: #18b690;
+    border: 1px solid #18b690;
+    background: $neutral-white;
+  }
 }
 
 .action-container {

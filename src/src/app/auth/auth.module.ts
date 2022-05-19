@@ -17,7 +17,7 @@ import { InterestsService } from '../shared/services/interests.service';
 const routes: Routes = [
   {
     path: '',
-    component: AuthorizationComponent,
+    component: GeneralInterestsComponent,
   },
   {
     path: RoutesNames.GeneralInterests,
