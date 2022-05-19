@@ -20,3 +20,8 @@
     margin-right: 10px;
   }
 }
+
+.soul-button:disabled {
+  background: black;
+  cursor: default;
+}

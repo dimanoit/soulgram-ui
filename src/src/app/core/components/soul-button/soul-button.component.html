@@ -2,6 +2,7 @@
   [style.color]="textColor"
   [style.background]="background"
   class="soul-button"
+  [disabled]="disabled === null ? false : disabled"
 >
   <img *ngIf="iconUrl" class="btn-image" [src]="iconUrl" />
   <div class="btn-text">

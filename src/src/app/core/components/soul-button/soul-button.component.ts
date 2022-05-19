@@ -12,4 +12,5 @@ export class SoulButtonComponent {
   @Input() iconUrl: string = '';
   @Input() textColor: SoulColors = SoulColors.NeutralWhite;
   @Input() background: SoulColors = SoulColors.Primary;
+  @Input() disabled: boolean | null = false;
 }
