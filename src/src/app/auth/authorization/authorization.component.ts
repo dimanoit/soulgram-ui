@@ -119,7 +119,11 @@ export class AuthorizationComponent {
     });
   }
 
-  private login(login: string, password: string): void {
+  private login(
+    login: string,
+    password: string,
+    afterRegistration: boolean = false
+  ): void {
     const signInModel: SignInModel = {
       login,
       password,
@@ -132,11 +136,13 @@ export class AuthorizationComponent {
       return;
     }
 
-    // TODO need redirect to Posts, General Interest it's temp solution
+    const pageToRedirect = afterRegistration
+      ? RoutesNames.GeneralInterests
+      : RoutesNames.Posts;
     this.authService
       .login(signInModel)
       .pipe(untilDestroyed(this))
-      .subscribe(() => this.router.navigateByUrl(RoutesNames.GeneralInterests));
+      .subscribe(() => this.router.navigateByUrl(pageToRedirect));
   }
 
   private register(): void {
@@ -149,6 +155,8 @@ export class AuthorizationComponent {
     this.authService
       .register(signUpModel)
       .pipe(untilDestroyed(this))
-      .subscribe(() => this.login(signUpModel.email, signUpModel.password));
+      .subscribe(() =>
+        this.login(signUpModel.email, signUpModel.password, true)
+      );
   }
 }
