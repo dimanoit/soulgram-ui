@@ -1,5 +1,5 @@
 import { Component, ChangeDetectionStrategy, Input } from '@angular/core';
-import { SoulColors } from '../../soul-colors';
+import { SoulButtonType } from './soul-button-type.enum';
 
 @Component({
   selector: 'soul-button',
@@ -10,7 +10,6 @@ import { SoulColors } from '../../soul-colors';
 export class SoulButtonComponent {
   @Input() text: string = '';
   @Input() iconUrl: string = '';
-  @Input() textColor: SoulColors = SoulColors.NeutralWhite;
-  @Input() background: SoulColors = SoulColors.Primary;
+  @Input() buttonType: SoulButtonType = SoulButtonType.Primary;
   @Input() disabled: boolean | null = false;
 }

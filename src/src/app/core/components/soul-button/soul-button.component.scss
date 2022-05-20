@@ -6,22 +6,53 @@
   justify-content: center;
   align-items: center;
 
-  color: $neutral-white;
-  background: $primary;
-
   cursor: pointer;
   padding: 14px 24px;
 
   height: 44px;
   border-radius: 12px;
-  width: 100%;
+  width: inherit;
 
   .btn-image {
     margin-right: 10px;
   }
 }
 
+.soul-button.primary {
+  color: $neutral-white;
+  background: $primary;
+}
+
+.soul-button.light-grey {
+  background: $neutral-grey-0;
+  color: $neutral-grey-3;
+}
+
 .soul-button:disabled {
-  background: black;
   cursor: default;
+}
+
+.soul-button.primary:disabled {
+  background: $primary-disabled;
+}
+
+.soul-button.light-grey:disabled {
+  color: $neutral-grey-1;
+}
+
+.soul-button.primary:hover {
+  background: $primary-hover;
+}
+
+.soul-button.light-grey:hover {
+  color: $neutral-grey-4;
+}
+
+.soul-button.primary:focus {
+  background: $primary-pressed;
+}
+
+.soul-button.light-grey:focus {
+  color: $neutral-grey-1;
+  color: $neutral-grey-4;
 }

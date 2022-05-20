@@ -9,9 +9,10 @@ import { CoreModule } from './core/core.module';
 import { routes } from './main.routes';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NavigationModule } from './navigation/navigation.module';
+import { UiKitSamplesComponent } from './ui-kit-samples/ui-kit-samples.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, UiKitSamplesComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

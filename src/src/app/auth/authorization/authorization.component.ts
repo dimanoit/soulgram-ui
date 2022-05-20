@@ -11,8 +11,8 @@ import {
 } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
+import { SoulButtonType } from 'src/app/core/components/soul-button/soul-button-type.enum';
 import { SoulInputParams } from 'src/app/core/components/soul-input/soul-input.params.model';
-import { SoulColors } from 'src/app/core/soul-colors';
 import { RoutesNames } from 'src/app/main.routes';
 import { LocalStorageService } from 'src/app/shared/services/local-storage.service';
 import { AuthPageData } from '../models/auth-page-data';
@@ -41,7 +41,7 @@ export class AuthorizationComponent {
   pageData: AuthPageData = loginPageData;
   currentState: 'Login' | 'Register' = 'Login';
 
-  colors = SoulColors;
+  soulButtonType = SoulButtonType;
   loginInputParams: SoulInputParams = loginInputParams;
   passwordInputParams: SoulInputParams = passwordInputParams;
   rePasswordInputParams: SoulInputParams = repeatPasswordInputParams;

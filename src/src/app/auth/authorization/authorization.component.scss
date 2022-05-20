@@ -1,8 +1,7 @@
 @import "/src/common-styles/variables";
 @import "/src/common-styles/text";
 
-
-.content-wrapper{
+.content-wrapper {
   background-color: $bg-primary;
   height: 100vh;
 }
@@ -81,7 +80,7 @@
       border-radius: 16px;
 
       .input {
-        min-width: 409px;
+        width: 409px;
       }
 
       .or-section {

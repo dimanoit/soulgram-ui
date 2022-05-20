@@ -6,7 +6,7 @@ import {
   Output,
   EventEmitter,
 } from '@angular/core';
-import { SoulColors } from '../../soul-colors';
+import { SoulButtonType } from '../soul-button/soul-button-type.enum';
 
 @Component({
   selector: 'soul-modal',
@@ -23,7 +23,7 @@ export class ModalComponent {
   @Output() onSaveClick: EventEmitter<void> = new EventEmitter<void>();
   @Output() onDraftClick: EventEmitter<void> = new EventEmitter<void>();
 
-  colors = SoulColors;
+  soulButtonType = SoulButtonType;
 
   onSave(): void {
     this.onSaveClick.emit();
