@@ -47,7 +47,10 @@ export class GeneralInterestsComponent {
   }
 
   confirm(): void {
-    this.interestsService;
+    this.interestsService
+      .setInterestsForUser(this.selectedInterests)
+      .pipe(untilDestroyed(this))
+      .subscribe();
   }
 
   trackByFunc(_: number, item: InterestWithSelection): InterestType {
