@@ -18,14 +18,7 @@ export class AppComponent implements OnInit {
     return this.localStorageService.getToken() !== null;
   }
 
-  ngOnInit(): void {
-    if (this.isAuthorized) {
-      this.router.navigateByUrl(RoutesNames.Posts);
-      return;
-    }
-
-    this.router.navigateByUrl(RoutesNames.Auth);
-  }
+  ngOnInit(): void {}
 
   //TODO Auth Guard
 }

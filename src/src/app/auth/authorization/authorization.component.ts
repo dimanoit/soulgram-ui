@@ -1,17 +1,33 @@
-import {ChangeDetectionStrategy, Component, ViewEncapsulation,} from '@angular/core';
-import {AbstractControl, FormBuilder, FormGroup, Validators,} from '@angular/forms';
-import {Router} from '@angular/router';
-import {UntilDestroy, untilDestroyed} from '@ngneat/until-destroy';
-import {SoulButtonType} from 'src/app/core/components/soul-button/soul-button-type.enum';
-import {SoulInputParams} from 'src/app/core/components/soul-input/soul-input.params.model';
-import {RoutesNames} from 'src/app/main.routes';
-import {LocalStorageService} from 'src/app/shared/services/local-storage.service';
-import {AuthPageData} from '../models/auth-page-data';
-import {SignInModel} from '../models/sign-in.model';
-import {SignUpModel} from '../models/sign-up.model';
-import {AuthService} from '../services/auth.service';
-import {loginInputParams, loginPageData, passwordInputParams,} from './login-page-data';
-import {registerPageData, repeatPasswordInputParams,} from './register-page-data';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  ViewEncapsulation,
+} from '@angular/core';
+import {
+  AbstractControl,
+  FormBuilder,
+  FormGroup,
+  Validators,
+} from '@angular/forms';
+import { Router } from '@angular/router';
+import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
+import { SoulButtonType } from 'src/app/core/components/soul-button/soul-button-type.enum';
+import { SoulInputParams } from 'src/app/core/components/soul-input/soul-input.params.model';
+import { RoutesNames } from 'src/app/main.routes';
+import { LocalStorageService } from 'src/app/shared/services/local-storage.service';
+import { AuthPageData } from '../models/auth-page-data';
+import { SignInModel } from '../models/sign-in.model';
+import { SignUpModel } from '../models/sign-up.model';
+import { AuthService } from '../services/auth.service';
+import {
+  loginInputParams,
+  loginPageData,
+  passwordInputParams,
+} from './login-page-data';
+import {
+  registerPageData,
+  repeatPasswordInputParams,
+} from './register-page-data';
 
 @UntilDestroy()
 @Component({
@@ -116,13 +132,14 @@ export class AuthorizationComponent {
     // TODO delete after backend deployment
     if (login == 'Anna') {
       this.localStorage.setTestToken();
-      this.router.navigateByUrl(RoutesNames.Posts);
+      this.router.navigateByUrl(RoutesNames.Home);
       return;
     }
 
     const pageToRedirect = afterRegistration
       ? RoutesNames.GeneralInterests
-      : RoutesNames.Posts;
+      : RoutesNames.Home;
+
     this.authService
       .login(signInModel)
       .pipe(untilDestroyed(this))

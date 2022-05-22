@@ -29,7 +29,7 @@ export class NavbarComponent {
   redirectToPage(menuItem: string) {
     switch (menuItem) {
       case this.icons.Home:
-        this.router.navigateByUrl(RoutesNames.Posts);
+        this.router.navigateByUrl(RoutesNames.Home);
         break;
       case this.icons.QuestionAnswer:
         this.router.navigateByUrl(RoutesNames.MessageCenter);

@@ -1,9 +1,11 @@
-import {ChangeDetectionStrategy, Component} from '@angular/core';
-import {UntilDestroy, untilDestroyed} from '@ngneat/until-destroy';
-import {map, Observable} from 'rxjs';
-import {InterestsService} from 'src/app/shared/services/interests.service';
-import {InterestType} from './interest-type.enum';
-import {InterestWithSelection} from './interest-with-selection.model';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
+import { map, Observable } from 'rxjs';
+import { RoutesNames } from 'src/app/main.routes';
+import { InterestsService } from 'src/app/shared/services/interests.service';
+import { InterestType } from './interest-type.enum';
+import { InterestWithSelection } from './interest-with-selection.model';
 
 @UntilDestroy()
 @Component({
@@ -18,7 +20,10 @@ export class GeneralInterestsComponent {
 
   interestEnumType = InterestType;
 
-  constructor(private interestsService: InterestsService) {
+  constructor(
+    private interestsService: InterestsService,
+    private router: Router
+  ) {
     this.interests$ = this.interestsService.getInterests().pipe(
       untilDestroyed(this),
       map((items) => this.toInterestWithSelections(items))
@@ -45,7 +50,7 @@ export class GeneralInterestsComponent {
     this.interestsService
       .setInterestsForUser(this.selectedInterests)
       .pipe(untilDestroyed(this))
-      .subscribe();
+      .subscribe(() => this.router.navigateByUrl(RoutesNames.Account));
   }
 
   trackByFunc(_: number, item: InterestWithSelection): InterestType {

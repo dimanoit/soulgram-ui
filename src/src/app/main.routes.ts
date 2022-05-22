@@ -7,8 +7,9 @@ export enum RoutesNames {
   AddPost = 'posts/add',
   Account = 'account',
   ForgotPassword = 'forgot-password',
-  Posts = 'posts',
+  Home = 'home',
   GeneralInterests = 'general-interests',
+  MyInterests = 'my-interests',
   UiKit = 'ui-kit',
 }
 
@@ -22,8 +23,13 @@ export const routes: Routes = [
     loadChildren: () => import('./auth/auth.module').then((m) => m.AuthModule),
   },
   {
-    path: RoutesNames.Posts,
+    path: RoutesNames.Home,
     loadChildren: () =>
       import('./posts/posts.module').then((m) => m.PostsModule),
+  },
+  {
+    path: RoutesNames.Account,
+    loadChildren: () =>
+      import('./account/account.module').then((m) => m.AccountModule),
   },
 ];
