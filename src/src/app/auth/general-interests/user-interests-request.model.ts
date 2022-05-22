@@ -1,4 +1,4 @@
-import { InterestType } from "./interest-type.enum";
+import {InterestType} from "./interest-type.enum";
 
 export interface UserInterestsRequest{
     userId: string;

@@ -1,13 +1,13 @@
-import { Injectable } from '@angular/core';
-import { OAuthService, UserInfo } from 'angular-oauth2-oidc';
-import { from, map, Observable, Subject, tap } from 'rxjs';
-import { SoulHttpClient } from 'src/app/shared/services/soul-http-client.service';
-import { environment, ServerUrls } from 'src/environments/environment';
-import { AuthSettings } from '../models/auth-settings';
-import { LoginResult } from '../models/login-result.model';
-import { SignInModel } from '../models/sign-in.model';
-import { SignUpModel } from '../models/sign-up.model';
-import { UserLoginInfo } from '../models/user-login-info';
+import {Injectable} from '@angular/core';
+import {OAuthService} from 'angular-oauth2-oidc';
+import {from, map, Observable, Subject} from 'rxjs';
+import {SoulHttpClient} from 'src/app/shared/services/soul-http-client.service';
+import {environment} from 'src/environments/environment';
+import {AuthSettings} from '../models/auth-settings';
+import {LoginResult} from '../models/login-result.model';
+import {SignInModel} from '../models/sign-in.model';
+import {SignUpModel} from '../models/sign-up.model';
+import {UserLoginInfo} from '../models/user-login-info';
 
 // TODO add refresh token functional, and role management
 @Injectable()

@@ -1,12 +1,5 @@
-import {
-  Component,
-  ChangeDetectionStrategy,
-  Input,
-  ViewEncapsulation,
-  Output,
-  EventEmitter,
-} from '@angular/core';
-import { SoulButtonType } from '../soul-button/soul-button-type.enum';
+import {ChangeDetectionStrategy, Component, EventEmitter, Input, Output, ViewEncapsulation,} from '@angular/core';
+import {SoulButtonType} from '../soul-button/soul-button-type.enum';
 
 @Component({
   selector: 'soul-modal',

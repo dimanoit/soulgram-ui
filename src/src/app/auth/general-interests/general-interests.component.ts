@@ -1,9 +1,9 @@
-import { Component, ChangeDetectionStrategy } from '@angular/core';
-import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
-import { map, Observable } from 'rxjs';
-import { InterestsService } from 'src/app/shared/services/interests.service';
-import { InterestType } from './interest-type.enum';
-import { InterestWithSelection } from './interest-with-selection.model';
+import {ChangeDetectionStrategy, Component} from '@angular/core';
+import {UntilDestroy, untilDestroyed} from '@ngneat/until-destroy';
+import {map, Observable} from 'rxjs';
+import {InterestsService} from 'src/app/shared/services/interests.service';
+import {InterestType} from './interest-type.enum';
+import {InterestWithSelection} from './interest-with-selection.model';
 
 @UntilDestroy()
 @Component({

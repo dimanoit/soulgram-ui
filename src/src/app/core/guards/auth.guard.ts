@@ -1,7 +1,7 @@
-import { Injectable } from '@angular/core';
-import { CanActivate, Router } from '@angular/router';
-import { RoutesNames } from 'src/app/main.routes';
-import { LocalStorageService } from 'src/app/shared/services/local-storage.service';
+import {Injectable} from '@angular/core';
+import {CanActivate, Router} from '@angular/router';
+import {RoutesNames} from 'src/app/main.routes';
+import {LocalStorageService} from 'src/app/shared/services/local-storage.service';
 
 @Injectable({
   providedIn: 'root',

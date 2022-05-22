@@ -1,5 +1,5 @@
-import { SoulInputParams } from 'src/app/core/components/soul-input/soul-input.params.model';
-import { AuthPageData } from '../models/auth-page-data';
+import {SoulInputParams} from 'src/app/core/components/soul-input/soul-input.params.model';
+import {AuthPageData} from '../models/auth-page-data';
 
 export const registerPageData: AuthPageData = {
   title: 'Sing up',
