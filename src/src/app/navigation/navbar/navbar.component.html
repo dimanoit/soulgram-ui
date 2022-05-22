@@ -1,5 +1,5 @@
 <div class="soul-container">
-  <div class="logo-container">
+  <div class="logo-container" (click)="navigateToHome()">
     <img class="icon-image" src="/assets/icons/logo.svg" />
     <div class="text">Soulgram</div>
   </div>
@@ -7,7 +7,7 @@
   <!--TODO add bootstrap autocomplete attribute-->
   <soul-input
     icon="search"
-    placeholder="Search"
+    [params]="autocompleteParams"
     class="search-bar"
   ></soul-input>
 

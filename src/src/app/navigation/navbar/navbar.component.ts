@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { RoutesNames } from 'src/app/main.routes';
 import { MenuIcons } from './menu-items.enum';
 import { Component } from '@angular/core';
+import { SoulInputParams } from 'src/app/core/components/soul-input/soul-input.params.model';
 
 @Component({
   selector: 'soul-navbar',
@@ -12,6 +13,9 @@ import { Component } from '@angular/core';
 })
 export class NavbarComponent {
   icons = MenuIcons;
+  autocompleteParams = {
+    placeholder: 'Search',
+  } as SoulInputParams;
 
   constructor(private router: Router) {}
 
@@ -22,11 +26,11 @@ export class NavbarComponent {
     return this.redirectToPage(menuItem);
   }
 
-  private showNotification(): void {
-    // TODO show small modal
+  navigateToHome(): void {
+    return this.redirectToPage(RoutesNames.Home);
   }
 
-  redirectToPage(menuItem: string) {
+  redirectToPage(menuItem: string): void {
     switch (menuItem) {
       case this.icons.Home:
         this.router.navigateByUrl(RoutesNames.Home);
@@ -41,5 +45,9 @@ export class NavbarComponent {
         this.router.navigateByUrl(RoutesNames.Account);
         break;
     }
+  }
+
+  private showNotification(): void {
+    // TODO show small modal
   }
 }
