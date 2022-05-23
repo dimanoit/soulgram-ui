@@ -16,6 +16,11 @@ export class InterestsService {
     return this.httpClient.get('interests');
   }
 
+  getInterestsForUser(): Observable<InterestType[]> {
+    const userId = this.localStorage.getUserId();
+    return this.httpClient.get(`interests/${userId}`);
+  }
+
   setInterestsForUser(interests: InterestType[]): Observable<void> {
     const request = {
       interests,
