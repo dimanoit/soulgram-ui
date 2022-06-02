@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MyInterestsComponent } from './my-interests/my-interests.component';
 import { RouterModule, Routes } from '@angular/router';
-import { MoviesWidgetComponent } from './my-interests/movies-widget/movies-widget.component';
+import { CoreModule } from '../core/core.module';
 
 const routes: Routes = [
   {
@@ -12,7 +12,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [MyInterestsComponent, MoviesWidgetComponent],
-  imports: [CommonModule, RouterModule.forChild(routes)],
+  declarations: [MyInterestsComponent],
+  imports: [CommonModule, RouterModule.forChild(routes), CoreModule],
 })
 export class AccountModule {}

@@ -1,0 +1,12 @@
+@import "/src/common-styles/variables";
+@import "/src/common-styles/text";
+
+.interests-layout {
+  margin: 29px 112px;
+
+  .sub-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 37px;
+  }
+}

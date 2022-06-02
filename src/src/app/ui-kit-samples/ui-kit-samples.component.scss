@@ -7,24 +7,12 @@
   margin: 60px;
 
   display: flex;
+  justify-content: space-evenly;
 
   width: 800px;
   height: 800px;
 }
 
-.buttons-container {
-  display: flex;
-  flex-direction: column;
-  margin-left: 20px;
-
-  .primary-sample-button {
-    width: 100px;
-  }
-
-  .grey-button {
-  }
-}
-
-soul-button {
-  margin-top: 20px;
+.primary-sample-button {
+  width: 100px;
 }

@@ -10,6 +10,8 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { SoulChipsComponent } from './components/soul-chips/soul-chips.component';
 import { SoulTextAreaComponent } from './components/soul-text-area/soul-text-area.component';
 import { ToDateViewPipe } from './pipes/to-date-view.pipe';
+import { SoulAddLabelComponent } from './components/soul-add-label/soul-add-label.component';
+import { SoulSmallItemViewComponent } from './components/soul-small-item-view/soul-small-item-view.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +22,8 @@ import { ToDateViewPipe } from './pipes/to-date-view.pipe';
     SoulChipsComponent,
     SoulTextAreaComponent,
     ToDateViewPipe,
+    SoulAddLabelComponent,
+    SoulSmallItemViewComponent,
   ],
   imports: [CommonModule, ReactiveFormsModule, RouterModule, MatDialogModule],
   exports: [
@@ -30,6 +34,7 @@ import { ToDateViewPipe } from './pipes/to-date-view.pipe';
     SoulChipsComponent,
     SoulTextAreaComponent,
     ToDateViewPipe,
+    SoulAddLabelComponent,
   ],
 })
 export class CoreModule {}
