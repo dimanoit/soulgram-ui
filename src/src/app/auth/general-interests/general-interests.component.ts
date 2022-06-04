@@ -4,7 +4,7 @@ import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
 import { map, Observable } from 'rxjs';
 import { RoutesNames } from 'src/app/main.routes';
 import { InterestsService } from 'src/app/shared/services/interests.service';
-import { InterestType } from './interest-type.enum';
+import { GeneralInterests } from './general-interest.response.model';
 import { InterestWithSelection } from './interest-with-selection.model';
 
 @UntilDestroy()
@@ -16,9 +16,7 @@ import { InterestWithSelection } from './interest-with-selection.model';
 })
 export class GeneralInterestsComponent {
   interests$!: Observable<InterestWithSelection[]>;
-  selectedInterests: InterestType[] = [];
-
-  interestEnumType = InterestType;
+  selectedInterestsIds: string[] = [];
 
   constructor(
     private interestsService: InterestsService,
@@ -31,38 +29,39 @@ export class GeneralInterestsComponent {
   }
 
   get disabledComplete(): boolean {
-    return this.selectedInterests.length === 0;
+    return this.selectedInterestsIds.length === 0;
   }
 
   toggleSelection(interestWithSelection: InterestWithSelection): void {
     interestWithSelection.isSelected = !interestWithSelection.isSelected;
 
     if (interestWithSelection.isSelected) {
-      this.selectedInterests.push(interestWithSelection.interest);
+      this.selectedInterestsIds.push(interestWithSelection.id);
     } else {
-      this.selectedInterests = this.selectedInterests.filter(
-        (i) => i !== interestWithSelection.interest
+      this.selectedInterestsIds = this.selectedInterestsIds.filter(
+        (i) => i !== interestWithSelection.id
       );
     }
   }
 
   confirm(): void {
     this.interestsService
-      .setInterestsForUser(this.selectedInterests)
+      .setInterestsForUser(this.selectedInterestsIds)
       .pipe(untilDestroyed(this))
       .subscribe(() => this.router.navigateByUrl(RoutesNames.Account));
   }
 
-  trackByFunc(_: number, item: InterestWithSelection): InterestType {
-    return item.interest;
+  trackByFunc(_: number, item: InterestWithSelection): string {
+    return item.id;
   }
 
   private toInterestWithSelections(
-    interests: InterestType[]
+    interests: GeneralInterests[]
   ): InterestWithSelection[] {
     return interests.map((item) => {
       return {
-        interest: item,
+        name: item.name,
+        id: item.id,
         isSelected: false,
       } as InterestWithSelection;
     });

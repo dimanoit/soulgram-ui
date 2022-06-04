@@ -29,7 +29,7 @@ export class PostComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.loadPosts();
+    this.loadUserInfo();
   }
 
   deletePost(postId: string): void {
@@ -41,7 +41,7 @@ export class PostComponent implements OnInit {
 
   makeDraft(postId: string) {}
 
-  private loadPosts(): void {
+  private loadUserInfo(): void {
     if (this.post?.userId) {
       this.userService
         .getCompactInfoByUserId(this.post.userId)

@@ -1,6 +1,5 @@
-import {InterestType} from './interest-type.enum';
-
 export interface InterestWithSelection {
-  interest: InterestType;
+  name: string;
+  id: string;
   isSelected: boolean;
 }
