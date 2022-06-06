@@ -4,7 +4,7 @@ import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
 import { map, Observable } from 'rxjs';
 import { RoutesNames } from 'src/app/main.routes';
 import { InterestsService } from 'src/app/shared/services/interests.service';
-import { GeneralInterests } from './general-interest.response.model';
+import { Interests } from './general-interest.response.model';
 import { InterestWithSelection } from './interest-with-selection.model';
 
 @UntilDestroy()
@@ -56,7 +56,7 @@ export class GeneralInterestsComponent {
   }
 
   private toInterestWithSelections(
-    interests: GeneralInterests[]
+    interests: Interests[]
   ): InterestWithSelection[] {
     return interests.map((item) => {
       return {

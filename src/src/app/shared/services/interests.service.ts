@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { GeneralInterests } from 'src/app/auth/general-interests/general-interest.response.model';
+import { Interests } from 'src/app/auth/general-interests/general-interest.response.model';
 import { LocalStorageService } from './local-storage.service';
 import { SoulHttpClient } from './soul-http-client.service';
 
@@ -11,11 +11,11 @@ export class InterestsService {
     private localStorage: LocalStorageService
   ) {}
 
-  getInterests(): Observable<GeneralInterests[]> {
+  getInterests(): Observable<Interests[]> {
     return this.httpClient.get('interests');
   }
 
-  getInterestsForUser(): Observable<GeneralInterests[]> {
+  getInterestsForUser(): Observable<Interests[]> {
     const userId = this.localStorage.getUserId();
     return this.httpClient.get(`interests/${userId}`);
   }
