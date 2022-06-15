@@ -1,4 +1,5 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Interests } from 'src/app/auth/general-interests/general-interest.response.model';
 import { InterestsService } from 'src/app/shared/services/interests.service';
 
 @Component({
@@ -17,6 +18,6 @@ export class MyInterestsComponent implements OnInit {
   loadMyInterests() {
     this.interestService
       .getInterestsForUser()
-      .subscribe((data) => console.log(data));
+      .subscribe((data: Interests[]) => console.log(data));
   }
 }
