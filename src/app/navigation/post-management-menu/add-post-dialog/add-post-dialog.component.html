@@ -1,0 +1,23 @@
+<soul-modal
+  class="s-modal"
+  (savedClick)="publishPost(true)"
+  (draftedClick)="publishPost(false)"
+>
+  <form [formGroup]="uploadPostForm" class="s-modal">
+    <soul-input
+      formControlName="description"
+      [params]="inputParams"
+    ></soul-input>
+
+    <soul-chips
+      class="tags-input"
+      label="Tags (max 3)"
+      placeholder="Add tags to make your post more popular..."
+      (editedChips)="addChipsToForm($event)"
+    ></soul-chips>
+
+    <soul-file-uploader
+      (uploadedFiles)="addUploadedFiles($event)"
+    ></soul-file-uploader>
+  </form>
+</soul-modal>

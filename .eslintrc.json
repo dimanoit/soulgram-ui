@@ -1,0 +1,74 @@
+{
+  "root": true,
+  "ignorePatterns": ["projects/**/*"],
+  "overrides": [
+    {
+      "files": ["*.ts"],
+      "plugins": ["prefer-arrow", "import", "es"],
+      "parserOptions": {
+        "project": ["tsconfig.json"],
+        "createDefaultProgram": true
+      },
+      "extends": [
+        "airbnb-typescript/base",
+        "plugin:@angular-eslint/recommended",
+        "plugin:@angular-eslint/template/process-inline-templates",
+        "plugin:rxjs/recommended",
+        "plugin:prettier/recommended"
+      ],
+      "rules": {
+        "no-console": "off",
+        "max-len": ["error", { "code": 140 }],
+        "prefer-arrow-callback": "error",
+        "@typescript-eslint/explicit-member-accessibility": ["error", { "accessibility": "no-public" }],
+        "linebreak-style": ["error", "windows"],
+        "@typescript-eslint/prefer-readonly": ["error", { "onlyInlineLambdas": true }],
+        "@typescript-eslint/lines-between-class-members": "off",
+        "curly": ["error", "all"],
+        "no-implicit-coercion": "error",
+        "no-plusplus": "off",
+        "no-alert": "warn",
+        "@typescript-eslint/comma-dangle": "off",
+        "@typescript-eslint/no-explicit-any": "warn",
+        "@angular-eslint/directive-selector": [
+          "error",
+          {
+            "type": "attribute",
+            "prefix": "soul",
+            "style": "camelCase"
+          }
+        ],
+        "@angular-eslint/component-selector": [
+          "error",
+          {
+            "type": "element",
+            "prefix": "soul",
+            "style": "kebab-case"
+          }
+        ],
+        "rxjs/finnish": [
+          "error",
+          {
+            "functions": true,
+            "methods": true,
+            "names": {
+              "^(canActivate|canActivateChild|canDeactivate|canLoad|intercept|resolve|validate|paramMap|events|queryParams)$": false
+            },
+            "parameters": true,
+            "properties": true,
+            "types": {
+              "^EventEmitter$": false
+            },
+            "variables": true
+          }
+        ],
+        "es/no-promise": "warn"
+      }
+    },
+    {
+      "files": ["*.html"],
+      "extends": ["plugin:@angular-eslint/template/recommended"],
+      "rules": {}
+    }
+  ]
+}

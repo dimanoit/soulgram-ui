@@ -1,0 +1,15 @@
+<soul-input
+  class="chip-input"
+  [params]="params"
+  (enteredText)="addChip($event)"
+  [isDisabled]="isDisabled()"
+></soul-input>
+
+<div class="chip-container">
+  <div *ngFor="let chip of chips; index as idx" class="chip btn-text">
+    <div>{{ chip }}</div>
+    <div class="close-button material-icons-outlined" (click)="deleteChip(idx)">
+      close
+    </div>
+  </div>
+</div>
