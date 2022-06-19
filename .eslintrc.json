@@ -10,7 +10,8 @@
       },
       "extends": [
         "plugin:@angular-eslint/recommended",
-        "plugin:@angular-eslint/template/process-inline-templates"
+        "plugin:@angular-eslint/template/process-inline-templates",
+        "plugin:rxjs/recommended"
       ],
       "rules": {
         "@angular-eslint/directive-selector": [
@@ -27,6 +28,22 @@
             "type": "element",
             "prefix": "soul",
             "style": "kebab-case"
+          }
+        ],
+        "rxjs/finnish": [
+          "error",
+          {
+            "functions": true,
+            "methods": true,
+            "names": {
+              "^(canActivate|canActivateChild|canDeactivate|canLoad|intercept|resolve|validate|paramMap|events|queryParams)$": false
+            },
+            "parameters": true,
+            "properties": true,
+            "types": {
+              "^EventEmitter$": false
+            },
+            "variables": true
           }
         ]
       }

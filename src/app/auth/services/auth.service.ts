@@ -22,7 +22,7 @@ export class AuthService {
   }
 
   //TODO add interceptor to catch http errors
-  login(signInModel: SignInModel): Observable<UserLoginInfo> {
+  login$(signInModel: SignInModel): Observable<UserLoginInfo> {
     return from(
       this.oauthService.fetchTokenUsingPasswordFlowAndLoadUserProfile(
         signInModel.login,
@@ -31,8 +31,8 @@ export class AuthService {
     ).pipe(map((result: LoginResult) => result.info));
   }
 
-  register(signUpModel: SignUpModel): Observable<void> {
-    return this.httpClient.post('account', signUpModel);
+  register$(signUpModel: SignUpModel): Observable<void> {
+    return this.httpClient.post$('account', signUpModel);
   }
 
   private addOptions(identitySettings: AuthSettings) {

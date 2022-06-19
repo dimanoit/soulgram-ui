@@ -11,12 +11,12 @@ export class UserService {
     private localStorage: LocalStorageService
   ) {}
 
-  getCompactInfo(): Observable<CompactUserInfo> {
+  getCompactInfo$(): Observable<CompactUserInfo> {
     const userId = this.localStorage.getUserId();
-    return this.httpClient.get(`user-compact/${userId}`);
+    return this.httpClient.get$(`user-compact/${userId}`);
   }
 
-  getCompactInfoByUserId(userId: string): Observable<CompactUserInfo> {
-    return this.httpClient.get(`user-compact/${userId}`);
+  getCompactInfoByUserId$(userId: string): Observable<CompactUserInfo> {
+    return this.httpClient.get$(`user-compact/${userId}`);
   }
 }

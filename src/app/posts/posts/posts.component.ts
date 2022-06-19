@@ -25,7 +25,7 @@ export class PostsComponent implements OnInit {
 
   ngOnInit(): void {
     this.postService
-      .getPostsByUserId()
+      .getPostsByUserId$()
       .pipe(untilDestroyed(this))
       .subscribe((response: PageResponseModel<PostViewModel>) => {
         this.posts = response.data;

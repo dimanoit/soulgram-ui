@@ -21,8 +21,8 @@ export class PostsService {
     return this.httpClient.postProgress('posts', formData);
   }
 
-  deletePost(postId: string): Observable<void> {
-    return this.httpClient.delete(`posts/${postId}`);
+  deletePost$(postId: string): Observable<void> {
+    return this.httpClient.delete$(`posts/${postId}`);
   }
 
   uploadArticle(post: UploadPostModel) {
@@ -31,8 +31,8 @@ export class PostsService {
     return this.httpClient.postProgress('posts', formData);
   }
 
-  getPostsByUserId(): Observable<PageResponseModel<PostViewModel>> {
+  getPostsByUserId$(): Observable<PageResponseModel<PostViewModel>> {
     const userId = this.localStorage.getUserId();
-    return this.httpClient.get(`posts/user/${userId}`);
+    return this.httpClient.get$(`posts/user/${userId}`);
   }
 }

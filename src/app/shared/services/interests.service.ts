@@ -11,17 +11,17 @@ export class InterestsService {
     private localStorage: LocalStorageService
   ) {}
 
-  getInterests(): Observable<Interests[]> {
-    return this.httpClient.get('interests');
+  getInterests$(): Observable<Interests[]> {
+    return this.httpClient.get$('interests');
   }
 
-  getInterestsForUser(): Observable<Interests[]> {
+  getInterestsForUser$(): Observable<Interests[]> {
     const userId = this.localStorage.getUserId();
-    return this.httpClient.get(`interests/${userId}`);
+    return this.httpClient.get$(`interests/${userId}`);
   }
 
-  setInterestsForUser(interestsIds: string[]): Observable<void> {
+  setInterestsForUser$(interestsIds: string[]): Observable<void> {
     const userId = this.localStorage.getUserId();
-    return this.httpClient.patch(`interests/users/${userId}`, interestsIds);
+    return this.httpClient.patch$(`interests/users/${userId}`, interestsIds);
   }
 }

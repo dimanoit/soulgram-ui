@@ -22,7 +22,7 @@ export class GeneralInterestsComponent {
     private interestsService: InterestsService,
     private router: Router
   ) {
-    this.interests$ = this.interestsService.getInterests().pipe(
+    this.interests$ = this.interestsService.getInterests$().pipe(
       untilDestroyed(this),
       map((items) => this.toInterestWithSelections(items))
     );
@@ -46,7 +46,7 @@ export class GeneralInterestsComponent {
 
   confirm(): void {
     this.interestsService
-      .setInterestsForUser(this.selectedInterestsIds)
+      .setInterestsForUser$(this.selectedInterestsIds)
       .pipe(untilDestroyed(this))
       .subscribe(() => this.router.navigateByUrl(RoutesNames.Account));
   }

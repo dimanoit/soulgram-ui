@@ -141,7 +141,7 @@ export class AuthorizationComponent {
       : RoutesNames.Home;
 
     this.authService
-      .login(signInModel)
+      .login$(signInModel)
       .pipe(untilDestroyed(this))
       .subscribe(() => this.router.navigateByUrl(pageToRedirect));
   }
@@ -154,7 +154,7 @@ export class AuthorizationComponent {
     };
 
     this.authService
-      .register(signUpModel)
+      .register$(signUpModel)
       .pipe(untilDestroyed(this))
       .subscribe(() =>
         this.login(signUpModel.email, signUpModel.password, true)

@@ -25,7 +25,7 @@ export class CompactAccountInfoComponent implements OnInit {
 
   ngOnInit(): void {
     this.userService
-      .getCompactInfo()
+      .getCompactInfo$()
       .pipe(untilDestroyed(this))
       .subscribe((info: CompactUserInfo) => {
         this.userInfo = info;

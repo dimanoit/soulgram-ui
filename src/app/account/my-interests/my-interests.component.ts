@@ -17,7 +17,7 @@ export class MyInterestsComponent implements OnInit {
 
   loadMyInterests() {
     this.interestService
-      .getInterestsForUser()
+      .getInterestsForUser$()
       .subscribe((data: Interests[]) => console.log(data));
   }
 }

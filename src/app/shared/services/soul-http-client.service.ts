@@ -17,7 +17,7 @@ export class SoulHttpClient {
     return `${ServerUrls.Gateway}/${endPoint}`;
   }
 
-  post<T>(endPoint: string, body: Object): Observable<T> {
+  post$<T>(endPoint: string, body: Object): Observable<T> {
     return this.http.post<T>(
       this.getUrl(endPoint),
       body,
@@ -25,7 +25,7 @@ export class SoulHttpClient {
     );
   }
 
-  patch<T>(endPoint: string, body: Object): Observable<T> {
+  patch$<T>(endPoint: string, body: Object): Observable<T> {
     return this.http.patch<T>(
       this.getUrl(endPoint),
       body,
@@ -33,7 +33,7 @@ export class SoulHttpClient {
     );
   }
 
-  delete<T>(endPoint: string): Observable<T> {
+  delete$<T>(endPoint: string): Observable<T> {
     return this.http.delete<T>(
       this.getUrl(endPoint),
       this.getHttpRequestOptions()
@@ -46,7 +46,7 @@ export class SoulHttpClient {
     return this.http.post<T>(this.getUrl(endPoint), params, options);
   }
 
-  get<T>(endPoint: string): Observable<T> {
+  get$<T>(endPoint: string): Observable<T> {
     return this.http.get<T>(
       this.getUrl(endPoint),
       this.getHttpRequestOptions()

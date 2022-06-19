@@ -34,7 +34,7 @@ export class PostComponent implements OnInit {
 
   deletePost(postId: string): void {
     this.postService
-      .deletePost(postId)
+      .deletePost$(postId)
       .pipe(untilDestroyed(this))
       .subscribe(() => alert('Deleted'));
   }
@@ -44,7 +44,7 @@ export class PostComponent implements OnInit {
   private loadUserInfo(): void {
     if (this.post?.userId) {
       this.userService
-        .getCompactInfoByUserId(this.post.userId)
+        .getCompactInfoByUserId$(this.post.userId)
         .pipe(untilDestroyed(this))
         .subscribe((user: CompactUserInfo) => {
           this.userCompactInfo = user;
