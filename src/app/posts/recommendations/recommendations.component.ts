@@ -4,13 +4,8 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
   selector: 'soul-recommendations',
   templateUrl: './recommendations.component.html',
   styleUrls: ['./recommendations.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class RecommendationsComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+export class RecommendationsComponent {
+  constructor() {}
 }

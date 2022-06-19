@@ -13,16 +13,16 @@ export class ModalComponent {
   @Input() draft: string = 'Save as draft';
   @Input() save: string = 'Publish';
 
-  @Output() onSaveClick: EventEmitter<void> = new EventEmitter<void>();
-  @Output() onDraftClick: EventEmitter<void> = new EventEmitter<void>();
+  @Output() savedClick: EventEmitter<void> = new EventEmitter<void>();
+  @Output() draftedClick: EventEmitter<void> = new EventEmitter<void>();
 
   soulButtonType = SoulButtonType;
 
   onSave(): void {
-    this.onSaveClick.emit();
+    this.savedClick.emit();
   }
 
   onDraft(): void {
-    this.onDraftClick.emit();
+    this.draftedClick.emit();
   }
 }

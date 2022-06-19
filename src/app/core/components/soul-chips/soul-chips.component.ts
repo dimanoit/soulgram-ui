@@ -13,7 +13,7 @@ export class SoulChipsComponent implements OnInit {
   @Input() maxChips: number = 3;
   @Input() isHashtag: boolean = true;
 
-  @Output() onEditChips: EventEmitter<string[]> = new EventEmitter<string[]>();
+  @Output() editedChips: EventEmitter<string[]> = new EventEmitter<string[]>();
   params: SoulInputParams = {} as SoulInputParams;
   chips: string[] = [];
 
@@ -36,13 +36,13 @@ export class SoulChipsComponent implements OnInit {
     const value = this.isHashtag ? this.toHashtag(input.value) : input.value;
 
     this.chips.push(value);
-    this.onEditChips.emit(this.chips);
+    this.editedChips.emit(this.chips);
     input.value = '';
   }
 
   deleteChip(idx: number): void {
     this.chips.splice(idx, 1);
-    this.onEditChips.emit(this.chips);
+    this.editedChips.emit(this.chips);
   }
 
   private toHashtag(value: string): string {

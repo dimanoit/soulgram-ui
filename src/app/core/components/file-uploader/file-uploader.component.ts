@@ -18,7 +18,7 @@ import {
 export class FileUploaderComponent {
   @Input() fileLinks: string[] = [];
   @Input() disabled = false;
-  @Output() onUploadFiles: EventEmitter<File[]> = new EventEmitter<File[]>();
+  @Output() uploadedFiles: EventEmitter<File[]> = new EventEmitter<File[]>();
 
   @ViewChild('file') fileInput!: ElementRef;
 
@@ -44,7 +44,7 @@ export class FileUploaderComponent {
     this.fileLinks.push(fileData);
 
     this.cachedFiles.push(file);
-    this.onUploadFiles.emit(this.cachedFiles);
+    this.uploadedFiles.emit(this.cachedFiles);
 
     this.changeDetectorRef.detectChanges();
   }

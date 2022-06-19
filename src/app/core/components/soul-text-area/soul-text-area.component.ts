@@ -11,7 +11,7 @@ export class SoulTextAreaComponent {
   @Input() placeholder: string = '';
   @Input() maxCount: number = 2000;
 
-  @Output() onChange: EventEmitter<string> = new EventEmitter<string>();
+  @Output() changedContent: EventEmitter<string> = new EventEmitter<string>();
 
   symbolsCount = 0;
   constructor() {}
@@ -23,6 +23,6 @@ export class SoulTextAreaComponent {
 
     const value = (target as HTMLTextAreaElement).value;
     this.symbolsCount = value.length;
-    this.onChange.emit(value);
+    this.changedContent.emit(value);
   }
 }

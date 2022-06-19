@@ -1,7 +1,7 @@
 <soul-modal
   class="s-modal"
-  (onSaveClick)="publishPost(true)"
-  (onDraftClick)="publishPost(false)"
+  (savedClick)="publishPost(true)"
+  (draftedClick)="publishPost(false)"
 >
   <form [formGroup]="uploadPostForm" class="s-modal">
     <soul-input
@@ -13,11 +13,11 @@
       class="tags-input"
       label="Tags (max 3)"
       placeholder="Add tags to make your post more popular..."
-      (onEditChips)="addChipsToForm($event)"
+      (editedChips)="addChipsToForm($event)"
     ></soul-chips>
 
     <soul-file-uploader
-      (onUploadFiles)="addUploadedFiles($event)"
+      (uploadedFiles)="addUploadedFiles($event)"
     ></soul-file-uploader>
   </form>
 </soul-modal>

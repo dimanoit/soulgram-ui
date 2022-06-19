@@ -6,7 +6,7 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
   styleUrls: ['./stories.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class StoriesComponent implements OnInit {
+export class StoriesComponent {
   stories = [
     {
       profile: 'mock-small-profile-10.png',
@@ -49,6 +49,4 @@ export class StoriesComponent implements OnInit {
       content: 'story-9.png',
     },
   ];
-
-  ngOnInit(): void {}
 }

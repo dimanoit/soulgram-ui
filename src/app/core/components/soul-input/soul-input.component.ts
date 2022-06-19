@@ -26,7 +26,7 @@ export class SoulInputComponent implements ControlValueAccessor {
     this._isDisabled = value;
   }
 
-  @Output() onEnterText: EventEmitter<HTMLInputElement> =
+  @Output() enteredText: EventEmitter<HTMLInputElement> =
     new EventEmitter<HTMLInputElement>();
 
   private _isDisabled: boolean = false;
@@ -49,7 +49,7 @@ export class SoulInputComponent implements ControlValueAccessor {
 
   onEnter(target: EventTarget | null) {
     const htmlInput = target as HTMLInputElement;
-    this.onEnterText.emit(htmlInput);
+    this.enteredText.emit(htmlInput);
   }
 
   changeIcon(): void {

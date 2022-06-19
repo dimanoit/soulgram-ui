@@ -7,9 +7,7 @@ import { SoulButtonType } from '../core/components/soul-button/soul-button-type.
   styleUrls: ['./ui-kit-samples.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class UiKitSamplesComponent implements OnInit {
+export class UiKitSamplesComponent {
   soulButtonType = SoulButtonType;
   constructor() {}
-
-  ngOnInit(): void {}
 }
