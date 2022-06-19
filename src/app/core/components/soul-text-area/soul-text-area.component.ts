@@ -1,4 +1,4 @@
-import {ChangeDetectionStrategy, Component, EventEmitter, Input, Output,} from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'soul-text-area',
@@ -14,7 +14,6 @@ export class SoulTextAreaComponent {
   @Output() changedContent: EventEmitter<string> = new EventEmitter<string>();
 
   symbolsCount = 0;
-  constructor() {}
 
   onKeyPress(target: EventTarget | null): void {
     if (target === null) {

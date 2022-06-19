@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
   selector: 'soul-recommendations',
@@ -6,6 +6,4 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
   styleUrls: ['./recommendations.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class RecommendationsComponent {
-  constructor() {}
-}
+export class RecommendationsComponent {}

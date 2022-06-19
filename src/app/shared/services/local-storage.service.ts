@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { LoginResult } from 'src/app/auth/models/login-result.model';
 
 @Injectable({
   providedIn: 'root',

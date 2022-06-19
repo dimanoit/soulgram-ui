@@ -3,7 +3,6 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
 import { SoulInputParams } from 'src/app/core/components/soul-input/soul-input.params.model';
-import { PostType } from 'src/app/posts/posts/models/post-type.enum';
 import { UploadPostModel } from 'src/app/posts/posts/models/upload-post.model';
 import { LocalStorageService } from 'src/app/shared/services/local-storage.service';
 import { PostsService } from 'src/app/shared/services/posts.service';
@@ -23,9 +22,9 @@ export class AddPostDialogComponent {
   } as SoulInputParams;
 
   constructor(
-    private formBuilder: FormBuilder,
-    private postService: PostsService,
-    private localStorage: LocalStorageService
+    private readonly formBuilder: FormBuilder,
+    private readonly postService: PostsService,
+    private readonly localStorage: LocalStorageService
   ) {
     this.uploadPostForm = this.formBuilder.group({
       description: ['', [Validators.required]],
@@ -46,7 +45,7 @@ export class AddPostDialogComponent {
     });
   }
 
-  publishPost(isDraft: boolean): void {
+  publishPost(): void {
     const uploadPostModel: UploadPostModel = {
       userId: this.localStorage.getUserId(),
       text: this.uploadPostForm.controls['description'].value,

@@ -1,6 +1,6 @@
-import {SoulInputParams} from 'src/app/core/components/soul-input/soul-input.params.model';
-import {RoutesNames} from 'src/app/main.routes';
-import {AuthPageData} from '../models/auth-page-data';
+import { SoulInputParams } from 'src/app/core/components/soul-input/soul-input.params.model';
+import { RoutesNames } from 'src/app/main.routes';
+import { AuthPageData } from '../models/auth-page-data';
 
 export const loginPageData: AuthPageData = {
   title: 'Sing in',

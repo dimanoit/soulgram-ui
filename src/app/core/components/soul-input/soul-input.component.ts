@@ -1,6 +1,6 @@
-import {ChangeDetectionStrategy, Component, EventEmitter, Input, Output,} from '@angular/core';
-import {ControlValueAccessor, NG_VALUE_ACCESSOR} from '@angular/forms';
-import {SoulInputParams} from './soul-input.params.model';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
+import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
+import { SoulInputParams } from './soul-input.params.model';
 
 @Component({
   selector: 'soul-input',
@@ -26,8 +26,7 @@ export class SoulInputComponent implements ControlValueAccessor {
     this._isDisabled = value;
   }
 
-  @Output() enteredText: EventEmitter<HTMLInputElement> =
-    new EventEmitter<HTMLInputElement>();
+  @Output() enteredText: EventEmitter<HTMLInputElement> = new EventEmitter<HTMLInputElement>();
 
   private _isDisabled: boolean = false;
   value: string = '';
@@ -64,9 +63,7 @@ export class SoulInputComponent implements ControlValueAccessor {
 
   //#region ControlValueAccessor members
   onTouched = () => {};
-  onChange = (value: string) => {
-    value;
-  };
+  onChange = (value: string) => value;
 
   writeValue(inputValue: string): void {
     this.value = inputValue;

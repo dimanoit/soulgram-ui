@@ -1,23 +1,20 @@
-import {Injectable} from '@angular/core';
-import {OAuthService} from 'angular-oauth2-oidc';
-import {from, map, Observable, Subject} from 'rxjs';
-import {SoulHttpClient} from 'src/app/shared/services/soul-http-client.service';
-import {environment} from 'src/environments/environment';
-import {AuthSettings} from '../models/auth-settings';
-import {LoginResult} from '../models/login-result.model';
-import {SignInModel} from '../models/sign-in.model';
-import {SignUpModel} from '../models/sign-up.model';
-import {UserLoginInfo} from '../models/user-login-info';
+import { Injectable } from '@angular/core';
+import { OAuthService } from 'angular-oauth2-oidc';
+import { from, map, Observable, Subject } from 'rxjs';
+import { SoulHttpClient } from 'src/app/shared/services/soul-http-client.service';
+import { environment } from 'src/environments/environment';
+import { AuthSettings } from '../models/auth-settings';
+import { LoginResult } from '../models/login-result.model';
+import { SignInModel } from '../models/sign-in.model';
+import { SignUpModel } from '../models/sign-up.model';
+import { UserLoginInfo } from '../models/user-login-info';
 
 // TODO add refresh token functional, and role management
 @Injectable()
 export class AuthService {
   logout$: Subject<boolean> = new Subject<boolean>();
 
-  constructor(
-    private oauthService: OAuthService,
-    private httpClient: SoulHttpClient
-  ) {
+  constructor(private oauthService: OAuthService, private readonly httpClient: SoulHttpClient) {
     this.addOptions(environment.identitySettings);
   }
 
@@ -27,6 +24,7 @@ export class AuthService {
       this.oauthService.fetchTokenUsingPasswordFlowAndLoadUserProfile(
         signInModel.login,
         signInModel.password
+        // eslint-disable-next-line es/no-promise
       ) as Promise<LoginResult>
     ).pipe(map((result: LoginResult) => result.info));
   }

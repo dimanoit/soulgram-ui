@@ -12,19 +12,8 @@ import { ToolsService } from '../shared/services/tools.service';
 import { AddArticleDialogComponent } from './post-management-menu/add-article-dialog/add-article-dialog.component';
 
 @NgModule({
-  declarations: [
-    NavbarComponent,
-    PostManagementMenuComponent,
-    AddPostDialogComponent,
-    AddArticleDialogComponent,
-  ],
-  imports: [
-    CommonModule,
-    CoreModule,
-    ReactiveFormsModule,
-    MatDialogModule,
-    MatMenuModule,
-  ],
+  declarations: [NavbarComponent, PostManagementMenuComponent, AddPostDialogComponent, AddArticleDialogComponent],
+  imports: [CommonModule, CoreModule, ReactiveFormsModule, MatDialogModule, MatMenuModule],
   providers: [PostsService, ToolsService],
   exports: [NavbarComponent],
 })

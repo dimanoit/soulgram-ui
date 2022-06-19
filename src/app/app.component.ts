@@ -1,6 +1,4 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { RoutesNames } from './main.routes';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { LocalStorageService } from './shared/services/local-storage.service';
 
 @Component({
@@ -9,10 +7,7 @@ import { LocalStorageService } from './shared/services/local-storage.service';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AppComponent {
-  constructor(
-    private router: Router,
-    private localStorageService: LocalStorageService
-  ) {}
+  constructor(private readonly localStorageService: LocalStorageService) {}
 
   get isAuthorized(): boolean {
     return this.localStorageService.getToken() !== null;

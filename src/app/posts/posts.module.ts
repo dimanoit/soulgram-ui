@@ -30,12 +30,7 @@ const routes: Routes = [
     StoryComponent,
     AddStoryComponent,
   ],
-  imports: [
-    CommonModule,
-    RouterModule.forChild(routes),
-    CoreModule,
-    MatMenuModule,
-  ],
+  imports: [CommonModule, RouterModule.forChild(routes), CoreModule, MatMenuModule],
   providers: [UserService, ToDateViewPipe],
 })
 export class PostsModule {}

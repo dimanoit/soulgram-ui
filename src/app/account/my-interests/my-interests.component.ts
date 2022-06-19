@@ -9,15 +9,13 @@ import { InterestsService } from 'src/app/shared/services/interests.service';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class MyInterestsComponent implements OnInit {
-  constructor(private interestService: InterestsService) {}
+  constructor(private readonly interestService: InterestsService) {}
 
   ngOnInit(): void {
     this.loadMyInterests();
   }
 
   loadMyInterests() {
-    this.interestService
-      .getInterestsForUser$()
-      .subscribe((data: Interests[]) => console.log(data));
+    this.interestService.getInterestsForUser$().subscribe((data: Interests[]) => console.log(data));
   }
 }

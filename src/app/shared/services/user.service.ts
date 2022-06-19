@@ -6,10 +6,7 @@ import { SoulHttpClient } from './soul-http-client.service';
 
 @Injectable()
 export class UserService {
-  constructor(
-    private httpClient: SoulHttpClient,
-    private localStorage: LocalStorageService
-  ) {}
+  constructor(private readonly httpClient: SoulHttpClient, private readonly localStorage: LocalStorageService) {}
 
   getCompactInfo$(): Observable<CompactUserInfo> {
     const userId = this.localStorage.getUserId();

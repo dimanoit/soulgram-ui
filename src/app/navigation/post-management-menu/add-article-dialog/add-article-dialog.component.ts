@@ -1,9 +1,7 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { SoulInputParams } from 'src/app/core/components/soul-input/soul-input.params.model';
-import { PostType } from 'src/app/posts/posts/models/post-type.enum';
 import { UploadArticleModel } from 'src/app/posts/posts/models/upload-article.model';
-import { UploadPostModel } from 'src/app/posts/posts/models/upload-post.model';
 import { LocalStorageService } from 'src/app/shared/services/local-storage.service';
 import { PostsService } from 'src/app/shared/services/posts.service';
 
@@ -21,9 +19,9 @@ export class AddArticleDialogComponent {
   } as SoulInputParams;
 
   constructor(
-    private formBuilder: FormBuilder,
-    private postService: PostsService,
-    private localStorage: LocalStorageService
+    private readonly formBuilder: FormBuilder,
+    private readonly postService: PostsService,
+    private readonly localStorage: LocalStorageService
   ) {
     this.uploadPostForm = this.formBuilder.group({
       title: ['', [Validators.required]],

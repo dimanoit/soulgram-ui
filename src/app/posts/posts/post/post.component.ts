@@ -1,10 +1,4 @@
-import {
-  Component,
-  OnInit,
-  ChangeDetectionStrategy,
-  Input,
-  ChangeDetectorRef,
-} from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy, Input, ChangeDetectorRef } from '@angular/core';
 import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
 import { PostsService } from 'src/app/shared/services/posts.service';
 import { UserService } from 'src/app/shared/services/user.service';
@@ -23,9 +17,9 @@ export class PostComponent implements OnInit {
   userCompactInfo: CompactUserInfo = {} as CompactUserInfo;
 
   constructor(
-    private userService: UserService,
-    private postService: PostsService,
-    private changeDetectorRef: ChangeDetectorRef
+    private readonly userService: UserService,
+    private readonly postService: PostsService,
+    private readonly changeDetectorRef: ChangeDetectorRef
   ) {}
 
   ngOnInit(): void {
@@ -39,7 +33,7 @@ export class PostComponent implements OnInit {
       .subscribe(() => alert('Deleted'));
   }
 
-  makeDraft(postId: string) {}
+  makeDraft() {}
 
   private loadUserInfo(): void {
     if (this.post?.userId) {

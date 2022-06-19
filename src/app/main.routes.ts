@@ -11,6 +11,7 @@ export enum RoutesNames {
   GeneralInterests = 'general-interests',
   MyInterests = 'my-interests',
   UiKit = 'ui-kit',
+  Login = 'Login',
 }
 
 export const routes: Routes = [
@@ -24,12 +25,10 @@ export const routes: Routes = [
   },
   {
     path: RoutesNames.Home,
-    loadChildren: () =>
-      import('./posts/posts.module').then((m) => m.PostsModule),
+    loadChildren: () => import('./posts/posts.module').then((m) => m.PostsModule),
   },
   {
     path: RoutesNames.Account,
-    loadChildren: () =>
-      import('./account/account.module').then((m) => m.AccountModule),
+    loadChildren: () => import('./account/account.module').then((m) => m.AccountModule),
   },
 ];

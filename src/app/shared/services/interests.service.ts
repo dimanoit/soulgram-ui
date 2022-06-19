@@ -6,10 +6,7 @@ import { SoulHttpClient } from './soul-http-client.service';
 
 @Injectable()
 export class InterestsService {
-  constructor(
-    private httpClient: SoulHttpClient,
-    private localStorage: LocalStorageService
-  ) {}
+  constructor(private readonly httpClient: SoulHttpClient, private readonly localStorage: LocalStorageService) {}
 
   getInterests$(): Observable<Interests[]> {
     return this.httpClient.get$('interests');

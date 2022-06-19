@@ -1,5 +1,5 @@
-import {ChangeDetectionStrategy, Component, Input} from '@angular/core';
-import {SoulButtonType} from './soul-button-type.enum';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { SoulButtonType } from './soul-button-type.enum';
 
 @Component({
   selector: 'soul-button',

@@ -24,7 +24,7 @@ export class FileUploaderComponent {
 
   private cachedFiles: File[] = [];
 
-  constructor(private changeDetectorRef: ChangeDetectorRef) {}
+  constructor(private readonly changeDetectorRef: ChangeDetectorRef) {}
 
   get acceptedFormats(): string {
     return 'image/*';

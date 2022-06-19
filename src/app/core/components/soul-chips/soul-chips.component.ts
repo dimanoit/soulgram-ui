@@ -1,5 +1,5 @@
-import {ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output,} from '@angular/core';
-import {SoulInputParams} from '../soul-input/soul-input.params.model';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { SoulInputParams } from '../soul-input/soul-input.params.model';
 
 @Component({
   selector: 'soul-chips',

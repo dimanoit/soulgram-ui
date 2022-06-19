@@ -1,5 +1,3 @@
-import { PostType } from './post-type.enum';
-
 export interface UploadPostModel {
   userId: string;
   text: string;

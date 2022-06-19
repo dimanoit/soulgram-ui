@@ -1,4 +1,4 @@
-import {Pipe, PipeTransform} from '@angular/core';
+import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
   name: 'toDateView',
@@ -17,7 +17,7 @@ export class ToDateViewPipe implements PipeTransform {
 
     const now = new Date();
 
-    const milliseconds = +now - +date;
+    const milliseconds = Number(now) - Number(date);
     const seconds = Math.round(milliseconds / 1000);
     if (seconds < 60) {
       return seconds + 'sec';

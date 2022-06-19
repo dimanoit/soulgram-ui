@@ -10,9 +10,9 @@ import { ToolsService } from './tools.service';
 @Injectable()
 export class PostsService {
   constructor(
-    private httpClient: SoulHttpClient,
-    private tools: ToolsService,
-    private localStorage: LocalStorageService
+    private readonly httpClient: SoulHttpClient,
+    private readonly tools: ToolsService,
+    private readonly localStorage: LocalStorageService
   ) {}
 
   uploadPost(post: UploadPostModel) {

@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { SoulButtonType } from '../core/components/soul-button/soul-button-type.enum';
 
 @Component({
@@ -9,5 +9,4 @@ import { SoulButtonType } from '../core/components/soul-button/soul-button-type.
 })
 export class UiKitSamplesComponent {
   soulButtonType = SoulButtonType;
-  constructor() {}
 }

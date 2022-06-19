@@ -17,7 +17,7 @@ export class NavbarComponent {
     placeholder: 'Search',
   } as SoulInputParams;
 
-  constructor(private router: Router) {}
+  constructor(private readonly router: Router) {}
 
   makeActive(eventTarget: EventTarget | null): void {
     const element = eventTarget as HTMLDivElement;

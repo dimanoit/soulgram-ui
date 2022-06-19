@@ -18,10 +18,7 @@ export class GeneralInterestsComponent {
   interests$!: Observable<InterestWithSelection[]>;
   selectedInterestsIds: string[] = [];
 
-  constructor(
-    private interestsService: InterestsService,
-    private router: Router
-  ) {
+  constructor(private readonly interestsService: InterestsService, private readonly router: Router) {
     this.interests$ = this.interestsService.getInterests$().pipe(
       untilDestroyed(this),
       map((items) => this.toInterestWithSelections(items))
@@ -38,9 +35,7 @@ export class GeneralInterestsComponent {
     if (interestWithSelection.isSelected) {
       this.selectedInterestsIds.push(interestWithSelection.id);
     } else {
-      this.selectedInterestsIds = this.selectedInterestsIds.filter(
-        (i) => i !== interestWithSelection.id
-      );
+      this.selectedInterestsIds = this.selectedInterestsIds.filter((i) => i !== interestWithSelection.id);
     }
   }
 
@@ -55,9 +50,7 @@ export class GeneralInterestsComponent {
     return item.id;
   }
 
-  private toInterestWithSelections(
-    interests: Interests[]
-  ): InterestWithSelection[] {
+  private toInterestWithSelections(interests: Interests[]): InterestWithSelection[] {
     return interests.map((item) => {
       return {
         name: item.name,

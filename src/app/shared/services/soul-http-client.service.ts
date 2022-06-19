@@ -8,36 +8,22 @@ import { LocalStorageService } from './local-storage.service';
 
 @Injectable()
 export class SoulHttpClient {
-  constructor(
-    private http: HttpClient,
-    private localStorage: LocalStorageService
-  ) {}
+  constructor(private readonly http: HttpClient, private readonly localStorage: LocalStorageService) {}
 
   private getUrl(endPoint: string): string {
     return `${ServerUrls.Gateway}/${endPoint}`;
   }
 
   post$<T>(endPoint: string, body: Object): Observable<T> {
-    return this.http.post<T>(
-      this.getUrl(endPoint),
-      body,
-      this.getHttpRequestOptions()
-    );
+    return this.http.post<T>(this.getUrl(endPoint), body, this.getHttpRequestOptions());
   }
 
   patch$<T>(endPoint: string, body: Object): Observable<T> {
-    return this.http.patch<T>(
-      this.getUrl(endPoint),
-      body,
-      this.getHttpRequestOptions()
-    );
+    return this.http.patch<T>(this.getUrl(endPoint), body, this.getHttpRequestOptions());
   }
 
   delete$<T>(endPoint: string): Observable<T> {
-    return this.http.delete<T>(
-      this.getUrl(endPoint),
-      this.getHttpRequestOptions()
-    );
+    return this.http.delete<T>(this.getUrl(endPoint), this.getHttpRequestOptions());
   }
 
   postProgress<T>(endPoint: string, params: Object) {
@@ -47,10 +33,7 @@ export class SoulHttpClient {
   }
 
   get$<T>(endPoint: string): Observable<T> {
-    return this.http.get<T>(
-      this.getUrl(endPoint),
-      this.getHttpRequestOptions()
-    );
+    return this.http.get<T>(this.getUrl(endPoint), this.getHttpRequestOptions());
   }
 
   private getHttpRequestOptions(): HttpRequestOptions {
@@ -74,10 +57,7 @@ export class SoulHttpClient {
     const token = this.localStorage.getToken();
     if (token) {
       options.headers = new HttpHeaders();
-      options.headers = options.headers.append(
-        'Authorization',
-        `Bearer ${token}`
-      );
+      options.headers = options.headers.append('Authorization', `Bearer ${token}`);
     }
   }
 }

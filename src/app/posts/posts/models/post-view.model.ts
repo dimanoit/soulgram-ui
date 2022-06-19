@@ -1,4 +1,4 @@
-import { CompactPostMetadataModel } from "./compact-post-metadata.model";
+import { CompactPostMetadataModel } from './compact-post-metadata.model';
 
 export interface PostViewModel {
   id: string;
