@@ -12,13 +12,11 @@
     <div class="hint-text grey-3-text">{{ userCompactInfo.nickname }}</div>
 
     <div class="grey-3-text last-item">
-      <span class="material-icons" [matMenuTriggerFor]="menu" #menuTrigger>
-        more_vert
-      </span>
+      <span class="material-icons" [matMenuTriggerFor]="menu" #menuTrigger> more_vert </span>
 
       <mat-menu class="menu" #menu="matMenu">
         <li mat-menu-item (click)="deletePost(post.id)">Delete</li>
-        <li mat-menu-item (click)="makeDraft(post.id)">Make a draft</li>
+        <li mat-menu-item (click)="makeDraft()">Make a draft</li>
         <li mat-menu-item>Drafts</li>
       </mat-menu>
     </div>

@@ -1,6 +1,6 @@
 import { FormControl } from '@angular/forms';
 
-export function emailValidator(control: FormControl): { [key: string]: any } {
+export function emailValidator(control: FormControl): { [key: string]: boolean } {
   const emailRegexp =
     /^[a-z0-9!#$%&'*+\/=?^_`{|}~.-]+@[a-z0-9]([a-z0-9-]*[a-z0-9])?(\.[a-z0-9]([a-z0-9-]*[a-z0-9])?)*$/i;
 
