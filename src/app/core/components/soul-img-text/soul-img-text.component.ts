@@ -7,6 +7,6 @@ import { Component, ChangeDetectionStrategy, Input } from '@angular/core';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SoulImgTextComponent {
-  @Input() imgUrl: string = '';
+  @Input() imgUrl?: string = '';
   @Input() label: string = '';
 }
