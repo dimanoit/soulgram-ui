@@ -1,8 +1,8 @@
-<div class="soul-interest-widget-container">
-  <div class="title-text">{{ schema.name }}</div>
+<div class="soul-interest-widget-container soul-block-layout">
+  <div class="title-text title">{{ schema.name }}</div>
 
   <ng-container *ngFor="let schemaItem of schema.items">
-    <soul-add-label [name]="schemaItem.name"></soul-add-label>
+    <soul-add-label class="item-label" [name]="schemaItem.name"></soul-add-label>
 
     <div class="chips-list" *ngIf="schemaItem.type === itemType.Chips; else imgTextTemplate">
       <div class="chip" *ngFor="let chip of schemaItem.values">{{ chip.name }}</div>
@@ -19,4 +19,3 @@
     </ng-template>
   </ng-container>
 </div>
-
