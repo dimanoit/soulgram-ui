@@ -21,7 +21,7 @@
         "max-len": ["error", { "code": 140 }],
         "prefer-arrow-callback": "error",
         "@typescript-eslint/explicit-member-accessibility": ["error", { "accessibility": "no-public" }],
-        "linebreak-style": ["error", "windows"],
+        "linebreak-style": ["error", "unix"],
         "@typescript-eslint/prefer-readonly": ["error", { "onlyInlineLambdas": true }],
         "@typescript-eslint/lines-between-class-members": "off",
         "curly": ["error", "all"],
