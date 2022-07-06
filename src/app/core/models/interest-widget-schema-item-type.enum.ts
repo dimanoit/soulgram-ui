@@ -1,4 +1,4 @@
 export enum InterestWidgetSchemaItemType {
-    Chips,
-    ImgText
+  Chips,
+  ImgText,
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectionStrategy, Input } from '@angular/core';
+import { Component, ChangeDetectionStrategy, Input } from '@angular/core';
 import { InterestWidgetSchemaItemType } from '../../models/interest-widget-schema-item-type.enum';
 import { InterestWidgetSchema } from '../../models/interest-widget-schema.model';
 
@@ -13,4 +13,3 @@ export class SoulInterestWidgetComponent {
 
   itemType = InterestWidgetSchemaItemType;
 }
-
