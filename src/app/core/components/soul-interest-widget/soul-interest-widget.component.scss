@@ -1,23 +1,37 @@
 @import '/src/common-styles/text';
+@import 'src/common-styles/soul-layout';
 
 .soul-interest-widget-container {
   width: 1216px;
-
   padding: 30px 40px;
 
-  .chip-list {
+  .title {
+    font-weight: 700;
+    margin-bottom: 11px;
+  }
+
+  .item-label {
+    margin-top: 35px;
+    margin-bottom: 13px;
+    display: block;
+  }
+
+  .chips-list {
+    display: flex;
+
     .chip {
       margin-right: 16px;
-
       background: $neutral-grey-0;
+      padding: 14px 38px;
       border-radius: 36px;
+      display: block;
     }
+  }
 
-    .img-text-container {
-      display: flex;
-      flex-wrap: wrap;
+  .img-text-container {
+    display: flex;
+    flex-wrap: wrap;
 
-      width: inherit;
-    }
+    width: inherit;
   }
 }
