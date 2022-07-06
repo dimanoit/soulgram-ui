@@ -4,5 +4,5 @@
     <soul-button text="Add interests"></soul-button>
   </div>
 
-  <!-- ng for with widgets -->
+  <soul-interest-widget *ngFor="let schema of widgets" [schema]="schema"></soul-interest-widget>
 </div>

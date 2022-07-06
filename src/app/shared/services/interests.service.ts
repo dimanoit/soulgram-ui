@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { AggregatedInterests } from 'src/app/account/my-interests/aggregated-interests.model';
 import { Interests } from 'src/app/auth/general-interests/general-interest.response.model';
 import { LocalStorageService } from './local-storage.service';
 import { SoulHttpClient } from './soul-http-client.service';
@@ -12,7 +13,7 @@ export class InterestsService {
     return this.httpClient.get$('interests');
   }
 
-  getInterestsForUser$(): Observable<Interests[]> {
+  getAggregatedInterestsForUser$(): Observable<AggregatedInterests[]> {
     const userId = this.localStorage.getUserId();
     return this.httpClient.get$(`interests/${userId}`);
   }

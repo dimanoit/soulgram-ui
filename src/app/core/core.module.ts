@@ -13,6 +13,7 @@ import { ToDateViewPipe } from './pipes/to-date-view.pipe';
 import { SoulAddLabelComponent } from './components/soul-add-label/soul-add-label.component';
 import { SoulSmallItemViewComponent } from './components/soul-small-item-view/soul-small-item-view.component';
 import { SoulImgTextComponent } from './components/soul-img-text/soul-img-text.component';
+import { SoulInterestWidgetComponent } from './components/soul-interest-widget/soul-interest-widget.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { SoulImgTextComponent } from './components/soul-img-text/soul-img-text.c
     SoulAddLabelComponent,
     SoulSmallItemViewComponent,
     SoulImgTextComponent,
+    SoulInterestWidgetComponent,
   ],
   imports: [CommonModule, ReactiveFormsModule, RouterModule, MatDialogModule],
   exports: [
@@ -38,6 +40,7 @@ import { SoulImgTextComponent } from './components/soul-img-text/soul-img-text.c
     ToDateViewPipe,
     SoulAddLabelComponent,
     SoulImgTextComponent,
+    SoulInterestWidgetComponent,
   ],
 })
 export class CoreModule {}

@@ -1,0 +1,23 @@
+@import '/src/common-styles/text';
+
+.soul-interest-widget-container {
+  width: 1216px;
+
+  padding: 30px 40px;
+
+  .chip-list {
+    .chip {
+      margin-right: 16px;
+
+      background: $neutral-grey-0;
+      border-radius: 36px;
+    }
+
+    .img-text-container {
+      display: flex;
+      flex-wrap: wrap;
+
+      width: inherit;
+    }
+  }
+}
