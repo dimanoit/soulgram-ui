@@ -40,6 +40,7 @@ import { SoulInterestWidgetComponent } from './components/soul-interest-widget/s
     ToDateViewPipe,
     SoulAddLabelComponent,
     SoulImgTextComponent,
+    SoulInterestWidgetComponent,
   ],
 })
 export class CoreModule {}
