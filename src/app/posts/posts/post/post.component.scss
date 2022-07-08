@@ -50,6 +50,7 @@
     .comments {
       display: flex;
       align-items: center;
+      cursor: pointer;
 
       .quantity {
         margin-left: 10px;
@@ -59,6 +60,7 @@
 
   .last-item {
     margin-left: auto;
+    cursor: pointer;
 
     .menu-icon {
       cursor: pointer;
