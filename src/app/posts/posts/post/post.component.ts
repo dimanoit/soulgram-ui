@@ -26,11 +26,26 @@ export class PostComponent implements OnInit {
     this.loadUserInfo();
   }
 
+  get likeIcon(): string {
+    return this.post.liked ? 'favorite' : 'favorite_border';
+  }
+
   deletePost(postId: string): void {
     this.postService
       .deletePost$(postId)
       .pipe(untilDestroyed(this))
       .subscribe(() => alert('Deleted'));
+  }
+
+  like(): void {
+  this.postService.likePost$(this.post.id)
+  .pipe(untilDestroyed(this))
+      .subscribe(() => alert('LIKED'));
+  }
+  }
+
+  unlike(): void{
+
   }
 
   makeDraft() {}

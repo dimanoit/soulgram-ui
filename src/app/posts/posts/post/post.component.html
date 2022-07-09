@@ -35,7 +35,7 @@
 
   <div class="user-reactions">
     <div class="likes hint-text">
-      <div class="material-icons">favorite_border</div>
+      <div [class.filed]="post.liked" class="material-icons">{{ likeIcon }}</div>
       <div class="quantity">{{ post?.metadata?.likes }}</div>
     </div>
 

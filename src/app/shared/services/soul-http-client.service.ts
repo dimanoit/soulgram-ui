@@ -22,6 +22,10 @@ export class SoulHttpClient {
     return this.http.patch<T>(this.getUrl(endPoint), body, this.getHttpRequestOptions());
   }
 
+  put$<T>(endPoint: string): Observable<T> {
+    return this.http.put<T>(this.getUrl(endPoint), this.getHttpRequestOptions());
+  }
+
   delete$<T>(endPoint: string): Observable<T> {
     return this.http.delete<T>(this.getUrl(endPoint), this.getHttpRequestOptions());
   }

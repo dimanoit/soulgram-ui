@@ -25,6 +25,16 @@ export class PostsService {
     return this.httpClient.delete$(`posts/${postId}`);
   }
 
+  removeLikeFromPost$(id: string) {
+    const userId = this.localStorage.getUserId();
+    return this.httpClient.delete$(`posts/${id}/like?userId=${userId}`);
+  }
+
+  likePost$(id: string) {
+    const userId = this.localStorage.getUserId();
+    return this.httpClient.put$(`posts/${id}/like?userId=${userId}`);
+  }
+
   uploadArticle(post: UploadPostModel) {
     const formData = this.tools.classToFormData(post);
 
@@ -33,6 +43,6 @@ export class PostsService {
 
   getPostsByUserId$(): Observable<PageResponseModel<PostViewModel>> {
     const userId = this.localStorage.getUserId();
-    return this.httpClient.get$(`posts/user/${userId}`);
+    return this.httpClient.get$(`posts/user/${userId}/me/${userId}`);
   }
 }
