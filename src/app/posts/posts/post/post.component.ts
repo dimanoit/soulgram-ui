@@ -20,7 +20,7 @@ export class PostComponent implements OnInit {
     private readonly userService: UserService,
     private readonly postService: PostsService,
     private readonly changeDetectorRef: ChangeDetectorRef
-  ) { }
+  ) {}
 
   ngOnInit(): void {
     this.loadUserInfo();
@@ -37,17 +37,30 @@ export class PostComponent implements OnInit {
       .subscribe(() => alert('Deleted'));
   }
 
-  like(): void {
-    this.postService.likePost$(this.post.id)
+  updateLikeStatus(): void {
+    if (this.post.liked) {
+      this.unlike();
+      return;
+    }
+
+    this.like();
+  }
+
+  private like(): void {
+    this.postService
+      .likePost$(this.post.id)
       .pipe(untilDestroyed(this))
       .subscribe(() => alert('LIKED'));
   }
 
-  unlike(): void {
-
+  private unlike(): void {
+    this.postService
+      .removeLikeFromPost$(this.post.id)
+      .pipe(untilDestroyed(this))
+      .subscribe(() => alert('UNLIKED'));
   }
 
-  makeDraft() { }
+  makeDraft() {}
 
   private loadUserInfo(): void {
     if (this.post?.userId) {
