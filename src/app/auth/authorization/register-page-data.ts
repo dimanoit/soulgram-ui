@@ -10,5 +10,6 @@ export const registerPageData: AuthPageData = {
 
 export const repeatPasswordInputParams: SoulInputParams = {
   label: 'Repeat password',
+  placeholder: "Enter password again",
   hint: 'Use 8 or more characters with a mix of letters, numbers & symbols',
 } as SoulInputParams;

@@ -11,11 +11,12 @@ export const loginPageData: AuthPageData = {
 
 export const passwordInputParams: SoulInputParams = {
   label: 'Password',
+  placeholder: "Enter password",
   secondLabel: 'Forgot your password?',
   link: RoutesNames.ForgotPassword,
 } as SoulInputParams;
 
 export const loginInputParams: SoulInputParams = {
   label: 'Login',
-  placeholder: 'example@gmail.com',
+  placeholder: 'login',
 } as SoulInputParams;

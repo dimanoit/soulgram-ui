@@ -99,7 +99,7 @@ export class AuthorizationComponent {
     };
 
     // TODO delete after backend deployment
-    if (login == 'Anna') {
+    if (login == 'Dima') {
       this.localStorage.setTestToken();
       this.router.navigateByUrl(RoutesNames.Home);
       return;
