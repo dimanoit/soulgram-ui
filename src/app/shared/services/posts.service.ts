@@ -43,6 +43,7 @@ export class PostsService {
 
   getPostsByUserId$(): Observable<PageResponseModel<PostViewModel>> {
     const userId = this.localStorage.getUserId();
-    return this.httpClient.get$(`posts/user/${userId}/me/${userId}`);
+
+    return this.httpClient.get$(`user-posts/${userId}`);
   }
 }
